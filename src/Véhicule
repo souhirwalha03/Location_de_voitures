@@ -1,16 +1,16 @@
 import java.util.*;
 
-public class Vehicule {
+public class Vehicule{
 	
-   private int idVehicule;
-   private int kilometrage ;
-   private int nbrPlaces ;
-   private int prixlocation;
-   private String modele ;
-   private String marque;
-   private String immatriculation ;
-   private String couleur;
-   private String puissance;  
+    private int idVehicule;
+    private int kilometrage ;
+    private int nbrPlaces ;
+    private float prixlocation;
+    private String modele ;
+    private String marque;
+    private String immatriculation ;
+    private String couleur;
+    private String puissance;  
 
    //constructeur
 
@@ -29,69 +29,70 @@ public class Vehicule {
     public Vehicule(){}
 
 // getters & setters 
-    public int getidVehicule(){
+    public int getIdVehicule(){
     return this.idVehicule;
     }
-    public void setidVehicule( int idVehicule ){
+    public void setIdVehicule( int idVehicule ){
      this.idVehicule=idVehicule ;
     }
 
-   public int getkilometrage(){
+   public int getKilometrage(){
     return this.kilometrage;
    }
-   public void setkilometrage ( int kilometrage){
+   public void setKilometrage ( int kilometrage){
       this.kilometrage=kilometrage;
    }
 
-   public int getnbrPlaces()
+   public int getNbrPlaces()
    { 
     return this.nbrPlaces;
    }
-   public void setnbrPlaces (int nbrPlaces){
+   public void setNbrPlaces (int nbrPlaces){
     this.nbrPlaces=nbrPlaces;
    }
 
-    public float prixlocation(){
+    public float getPrixlocation(){
         return this.prixlocation;
     }
-    public void setprixlocation(float prixlocation){
+    public void setPrixlocation(float prixlocation){
         this.prixlocation=prixlocation;
     }
 
-    public String getmodele(){
+    public String getModele(){
         return this.modele;
     }
-    public void setmodele(String modele){
+    public void setModele(String modele){
         this.modele=modele;
     }
 
-    public String getmarque(){
+    public String getMarque(){
         return this.marque;
     }
-    public void setmarque(){
-        this.modele=modele;
+    public void setMarque(){
+        this.marque=marque;
     }
 
-    public String getimmatriculation(){
+    public String getImmatriculation(){
         return this.immatriculation;
     }
-    public void setimmatriculation(){
+    public void setImmatriculation(){
         this.immatriculation=immatriculation;
     }
 
-    public String getcouleur(){
+    public String getCouleur(){
         return this.couleur;
     }
-    public void setcouleur(){
+    public void setCouleur(){
         this.couleur=couleur;
     }
 
-    public String getpuissance(){
+    public String getPuissance(){
         return this.puissance;
     }
-    public void setpuissance(){
+    public void setPuissance(){
         this.puissance=puissance;
     }
-    }
+}
+
 
 

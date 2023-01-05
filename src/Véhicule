@@ -92,6 +92,6 @@ public class Vehicule {
     public void setpuissance(){
         this.puissance=puissance;
     }
-    
+    }
 
 

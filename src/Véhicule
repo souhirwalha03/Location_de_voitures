@@ -1,0 +1,97 @@
+import java.util.*;
+
+public class Vehicule {
+	
+   private int idVehicule;
+   private int kilometrage ;
+   private int nbrPlaces ;
+   private int prixlocation;
+   private String modele ;
+   private String marque;
+   private String immatriculation ;
+   private String couleur;
+   private String puissance;  
+
+   //constructeur
+
+    public Vehicule(int idVehicule, int kilometrage , int nbrPlaces , float prixlocation , String modele , String marque , String immatriculation , String couleur ,  String puissance)
+    {
+        this.idVehicule=idVehicule;
+        this.kilometrage=kilometrage;
+        this.nbrPlaces=nbrPlaces;
+        this.prixlocation=prixlocation;
+        this.modele=modele;
+        this.marque=marque;
+        this.immatriculation=immatriculation;
+        this.couleur=couleur;
+        this.puissance=puissance;
+    }
+    public Vehicule(){}
+
+// getters & setters 
+    public int getidVehicule(){
+    return this.idVehicule;
+    }
+    public void setidVehicule( int idVehicule ){
+     this.idVehicule=idVehicule ;
+    }
+
+   public int getkilometrage(){
+    return this.kilometrage;
+   }
+   public void setkilometrage ( int kilometrage){
+      this.kilometrage=kilometrage;
+   }
+
+   public int getnbrPlaces()
+   { 
+    return this.nbrPlaces;
+   }
+   public void setnbrPlaces (int nbrPlaces){
+    this.nbrPlaces=nbrPlaces;
+   }
+
+    public float prixlocation(){
+        return this.prixlocation;
+    }
+    public void setprixlocation(float prixlocation){
+        this.prixlocation=prixlocation;
+    }
+
+    public String getmodele(){
+        return this.modele;
+    }
+    public void setmodele(String modele){
+        this.modele=modele;
+    }
+
+    public String getmarque(){
+        return this.marque;
+    }
+    public void setmarque(){
+        this.modele=modele;
+    }
+
+    public String getimmatriculation(){
+        return this.immatriculation;
+    }
+    public void setimmatriculation(){
+        this.immatriculation=immatriculation;
+    }
+
+    public String getcouleur(){
+        return this.couleur;
+    }
+    public void setcouleur(){
+        this.couleur=couleur;
+    }
+
+    public String getpuissance(){
+        return this.puissance;
+    }
+    public void setpuissance(){
+        this.puissance=puissance;
+    }
+    
+
+

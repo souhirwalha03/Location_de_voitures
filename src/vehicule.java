@@ -1,18 +1,27 @@
-public class vehicule {
+import java.util.*;
+
+
+public class Vehicule {
 	
         private int idVehicule;
+        private int kilometrage ;
         private int nbrPlaces ;
+        private float prixlocation;
         private String marque;
+        private String immatriculation ;
         private String couleur;
         private int dispo;  
     
        //constructeur
        
-        public vehicule(int idVehicule, int nbrPlaces , String marque  , String couleur, int dispo)
+        public vehicule(int idVehicule, int kilometrage , int nbrPlaces , float prixlocation , String marque , String immatriculation , String couleur, int dispo)
         {
             this.idVehicule=idVehicule;
+            this.kilometrage=kilometrage;
             this.nbrPlaces=nbrPlaces;
+            this.prixlocation=prixlocation;
             this.marque=marque;
+            this.immatriculation=immatriculation;
             this.couleur=couleur;
             this.dispo=dispo;        }
         public vehicule(){}
@@ -27,6 +36,13 @@ public class vehicule {
          this.idVehicule=idVehicule ;
         }
     
+       public int getKilometrage(){
+        return this.kilometrage;
+       }
+       public void setKilometrage ( int kilometrage){
+          this.kilometrage=kilometrage;
+       }
+    
        public int getNbrPlaces()
        { 
         return this.nbrPlaces;
@@ -35,12 +51,27 @@ public class vehicule {
         this.nbrPlaces=nbrPlaces;
        }
     
+        public float getPrixlocation(){
+            return this.prixlocation;
+        }
+        public void setPrixlocation(float prixlocation){
+            this.prixlocation=prixlocation;
+        }
+    
         public String getMarque() {
             return this.marque;
         }
         public void setMarque( String marque ) {
             this.marque=marque ;
         }
+    
+        public String getImmatriculation(){
+            return this.immatriculation;
+        }
+        public void setImmatriculation( String immatriculation){
+            this.immatriculation=immatriculation ;
+        }
+    
         public String getCouleur(){
             return this.couleur;
         }
@@ -55,13 +86,13 @@ public class vehicule {
         }
 
         ///methode d'affichage 
-        public void affichervehicule(vehicule V){
+        public void affichervehicule(Vehicule V){
          
-        System.out.println("Id:"+ idVehicule + "Nombre de places:\n"+nbrPlaces + "Marque\n"+ marque  +"Disponibilité:\n" + dispo);
+        System.out.println("Id:"+ idVehicule + "Kilometrage\n"+ kilometrage + "Nombre de places:\n"+nbrPlaces + "Prix de location\n"+prixlocation + "Marque\n"+ marque + "Immatriculation:\n"+ immatriculation +"Disponibilité:\n" + dispo);
         }
 
         /// methode de verification de disponibilité 
-        public String EstDisponible(vehicule V){
+        public String EstDisponible(Vehicule V){
             if ( V.dispo==0 )  {
                 return("La voiture est disponible à louer");
             } else {
@@ -72,4 +103,6 @@ public class vehicule {
         }
     }
     
+
+
 

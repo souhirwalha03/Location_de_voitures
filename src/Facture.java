@@ -17,7 +17,7 @@ public class Facture {
         this.prix_journalie_convenu=prix_journalie_convenu;
         this.agent=agent;
      }
-public Facture(){};
+     public Facture(){};
 
  //getters and setters
      public Agent getagent(){

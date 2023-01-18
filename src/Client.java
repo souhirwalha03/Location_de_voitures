@@ -22,11 +22,13 @@ public class Client extends Utilisateur {
         
     }
 
+    public Client () {}
+
 //getter
     public int getIdClient (){
         return this.id_client;
     }
-    
+
 
     public ArrayList <Vehicule> getvehicule() {
         return(vehicules);
@@ -35,6 +37,10 @@ public class Client extends Utilisateur {
 //setter
     public void setIdClient (int id_cient){
         this.id_client = id_client;
+    }
+
+    public void setVehicule (ArrayList <Vehicule> vehicules){
+        this.vehicules = vehicules;
     }
 
 //toString

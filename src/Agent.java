@@ -10,27 +10,40 @@ public class Agent extends Utilisateur {
    
     
 //constructeur
-    public Agent (int id_agent) {
-        this.id_agent=id_agent;
-    }
     public Agent (int id_agent,String nom, String prenom, String login, String mdp ){
         super(nom, prenom,login, mdp);
         this.id_agent=id_agent;
         contrats = new  ArrayList<Contrat>();
         factures = new  ArrayList<Facture>();
-
-        
     }
+    public Agent () {}
+
 
 //get
     public int getidAgent (){
         return this.id_agent;
     }
 
+    public ArrayList <Contrat> getContrat() {
+        return contrats;
+    }
+    public ArrayList <Facture> getFacture() {
+        return factures;
+    }
+
 //set
     public void setidAgent (int id_cient){
         this.id_agent = id_agent;
     }
+
+    public void setFacture (ArrayList <Facture> factures){
+        this.factures = factures;
+    }
+
+    public void setContrat (ArrayList <Contrat> contrats){
+        this.contrats = contrats;
+    }
+
 
 //toString
 

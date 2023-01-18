@@ -9,10 +9,10 @@ public class Vehicule {
         private int dispo; 
         
 //associations
-    private ArrayList <Client> clients;
-    private Agent agent;
-    
-       //constructeur
+        private ArrayList <Client> clients;
+        private Agent agent;
+        
+//constructeur
        
         public Vehicule(int idVehicule, int kilometrage , String marque , int dispo,Agent agent)
         {
@@ -27,55 +27,62 @@ public class Vehicule {
         public Vehicule(){}
 
 
-    // getters & setters 
+// getters   
         public ArrayList <Client> getclient() {
             return clients ;
         }
 
         public Agent getagent(){
             return this.agent;
-            }
-        public void setagent( Agent agent ){
-             this.agent=agent ;
-            }
-        
-    
+        }
+
         public int getIdVehicule(){
-        return this.idVehicule;
+            return this.idVehicule;
         }
-        public void setIdVehicule( int idVehicule ){
-         this.idVehicule=idVehicule ;
+
+        public int getKilometrage(){
+            return this.kilometrage;
         }
-    
-       public int getKilometrage(){
-        return this.kilometrage;
-       }
-       public void setKilometrage ( int kilometrage){
-          this.kilometrage=kilometrage;
-       }
-    
-    
+
         public String getMarque() {
             return this.marque;
         }
+
+        public int getDispo(){
+            return this.dispo;
+        }
+//setters
+        public void setClient (ArrayList <Client> clients){
+            this.clients = clients;
+        }
+
+        public void setagent( Agent agent ){
+             this.agent=agent ;
+        }
+    
+        public void setIdVehicule( int idVehicule ){
+            this.idVehicule=idVehicule ;
+        }
+    
+        public void setKilometrage ( int kilometrage){
+          this.kilometrage=kilometrage;
+        }
+    
         public void setMarque( String marque ) {
             this.marque=marque ;
         }
     
-        public int getDispo(){
-            return this.dispo;}
-
         public void setDispo(int dispo){
-        this.dispo=dispo;
+            this.dispo=dispo;
         }
 
-        ///methode d'affichage 
+///methode d'affichage 
         public void affichervehicule(Vehicule V){
          
-        System.out.println("Id:"+ idVehicule + "Kilometrage\n"+ kilometrage +"Marque\n"+ marque  +"Disponibilité:\n" + dispo);
+            System.out.println("Id:"+ idVehicule + "Kilometrage\n"+ kilometrage +"Marque\n"+ marque  +"Disponibilité:\n" + dispo);
         }
 
-        /// methode de verification de disponibilité 
+/// methode de verification de disponibilité 
         public String EstDisponible(Vehicule V){
             if ( V.dispo==0 )  {
                 return("La voiture est disponible à louer");
@@ -85,7 +92,7 @@ public class Vehicule {
 
        
         }
-    }
+}
     
 
 

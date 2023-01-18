@@ -5,9 +5,9 @@ public class Agent extends Utilisateur {
     private int id_agent;
 
 //associations
-    private ArrayList <Contrat> contrat;
-    private ArrayList <Facture> facture;
-    private ArrayList <Vehicule> vehicule;
+    private ArrayList <Contrat> contrats;
+    private ArrayList <Facture> factures;
+   
     
 //constructeur
     public Agent (int id_agent) {
@@ -16,6 +16,9 @@ public class Agent extends Utilisateur {
     public Agent (int id_agent,String nom, String prenom, String login, String mdp ){
         super(nom, prenom,login, mdp);
         this.id_agent=id_agent;
+        contrats = new  ArrayList<Contrat>();
+        factures = new  ArrayList<Facture>();
+
         
     }
 

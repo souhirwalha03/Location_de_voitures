@@ -6,21 +6,39 @@ public class Vehicule {
         private int idVehicule;
         private int kilometrage ;
         private String marque;
-        private int dispo;  
+        private int dispo; 
+        
+//associations
+    private ArrayList <Client> clients;
+    private Agent agent;
     
        //constructeur
        
-        public Vehicule(int idVehicule, int kilometrage , String marque , int dispo)
+        public Vehicule(int idVehicule, int kilometrage , String marque , int dispo,Agent agent)
         {
             this.idVehicule=idVehicule;
             this.kilometrage=kilometrage;
             this.marque=marque;
-            this.dispo=dispo;        }
+            this.dispo=dispo;    
+            this.agent=agent;
+            clients = new  ArrayList<Client>();    
+        }
 
         public Vehicule(){}
 
 
     // getters & setters 
+        public ArrayList <Client> getclient() {
+            return clients ;
+        }
+
+        public Agent getagent(){
+            return this.agent;
+            }
+        public void setagent( Agent agent ){
+             this.agent=agent ;
+            }
+        
     
         public int getIdVehicule(){
         return this.idVehicule;

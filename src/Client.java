@@ -5,8 +5,7 @@ public class Client extends Utilisateur {
     private int id_client;
 
 //associations
-    private ArrayList <Contrat> contrats;
-    private ArrayList <Facture> factures;
+    
     private ArrayList <Vehicule> vehicules;
 
 
@@ -14,8 +13,6 @@ public class Client extends Utilisateur {
 //constructeur
     public Client (int id_client) {
         this.id_client=id_client;
-        contrats = new  ArrayList<Contrat>();
-        factures = new  ArrayList<Facture>();
         vehicules = new  ArrayList<Vehicule>();
     }
 
@@ -29,14 +26,7 @@ public class Client extends Utilisateur {
     public int getIdClient (){
         return this.id_client;
     }
-
-    public ArrayList <Contrat> getContrat() {
-        return(contrats);
-    }
-
-    public ArrayList <Facture> getfacture() {
-        return(factures);
-    }
+    
 
     public ArrayList <Vehicule> getvehicule() {
         return(vehicules);

@@ -8,18 +8,26 @@ public class Facture {
        private float prix_journalie_convenu;
 
 //association
-     private Client client;
      private Agent agent;
     
 // constructeur 
-     public Facture(int idfac , String datefac , int nbr_jours_location, float prix_journalie_convenu){
+     public Facture(int idfac , String datefac , int nbr_jours_location, float prix_journalie_convenu,Agent agent){
         this.idfac=idfac;
         this.datefac=datefac;
         this.prix_journalie_convenu=prix_journalie_convenu;
+        this.agent=agent;
      }
 public Facture(){};
 
  //getters and setters
+     public Agent getagent(){
+     return this.agent;
+     }
+
+     public void setagent( Agent agent ){
+      this.agent=agent ;
+     }
+
     public float getPrix_journalie_convenu(){
      return this.prix_journalie_convenu;}
 

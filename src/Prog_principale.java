@@ -12,9 +12,9 @@ public class Prog_principale {
         clients.add(client3);
         Client.affClients(clients);
 
-        Agent Ag1 = new Agent(12,"aaa", "bbb");
-        Agent Ag2 = new Agent(36,"ccc", "dd");
-        Agent Ag3 = new Agent(56,"ee", "ff");
+        Agent Ag1 = new Agent(124658,"aaa", "bbb");
+        Agent Ag2 = new Agent(365685,"ccc", "dd");
+        Agent Ag3 = new Agent(561225,"ee", "ff");
         ArrayList<Agent> Agents = new ArrayList<Agent>();
         Agents.add(Ag1);
         Agents.add(Ag2);

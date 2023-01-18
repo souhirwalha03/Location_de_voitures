@@ -5,7 +5,6 @@ public class Agent extends Utilisateur {
     private int id_agent;
 
 //associations
-    private ArrayList <Contrat> contrats;
     private ArrayList <Facture> factures;
    
     
@@ -28,9 +27,7 @@ public class Agent extends Utilisateur {
         return this.id_agent;
     }
 
-    public ArrayList <Contrat> getContrat() {
-        return contrats;
-    }
+    
     public ArrayList <Facture> getFacture() {
         return factures;
     }
@@ -44,9 +41,7 @@ public class Agent extends Utilisateur {
         this.factures = factures;
     }
 
-    public void setContrat (ArrayList <Contrat> contrats){
-        this.contrats = contrats;
-    }
+   
 
 //afficher liste d'agent
      //public String afficher_agent(){
@@ -56,7 +51,8 @@ public class Agent extends Utilisateur {
 
     public static void affAgents (ArrayList<Agent> Agents){
         for (int i=0;i<nombreAgents;i++){
-             System.out.println( "id:"+Agents.get(i).id_agent+"| Nom: " + Agents.get(i).getNom()+ "| Prénom: "+ Agents.get(i).getPrenom());
+            System.out.println("La liste des Agents:");
+             System.out.println( "id:"+Agents.get(i).id_agent+" | Nom: " + Agents.get(i).getNom()+ " | Prénom: "+ Agents.get(i).getPrenom());
         }
     }
     

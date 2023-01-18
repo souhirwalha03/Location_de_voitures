@@ -5,6 +5,10 @@ public class Utilisateur {
     
     private String nom;
     private String prenom;
+    public static int nombreClients;
+    public static int nombreAgents;
+
+
     
 //CONSTRUCTOR
     public Utilisateur(String nom,String prenom)
@@ -36,9 +40,10 @@ public class Utilisateur {
 
 
 
- public String toString(int id) {
-    return "id:"+id+"| Nom: " + this.getNom() + "| Prénom: " + this.getPrenom();
-}
+//public String toString(int id) {
+//    return "id:"+id+"| Nom: " + this.getNom() + "| Prénom: " + this.getPrenom();
+//}
+
 
 
 

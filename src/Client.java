@@ -3,8 +3,7 @@ import java.util.*;
 
 public class Client extends Utilisateur {
     private int id_client;
-    private static int nombreClient;
-    private static List<Client> clients = new ArrayList<Client>();
+    //private static List<Client> clients = new ArrayList<Client>();
 
 
 //associations
@@ -17,11 +16,10 @@ public class Client extends Utilisateur {
     public Client (int id_client,String nom, String prenom){
         super(nom, prenom);
         this.id_client=id_client;
-        vehicules = new  ArrayList<Vehicule>();
-        nombreClient ++;
+        nombreClients ++;
     }
 
-    public Client () {nombreClient ++;}
+    public Client () {nombreClients ++;}
 
 //getter
     public int getIdClient (){
@@ -30,7 +28,7 @@ public class Client extends Utilisateur {
 
 
     public ArrayList <Vehicule> getvehicule() {
-        return(vehicules);
+        return this.vehicules;
     }
 
 //setter
@@ -63,12 +61,11 @@ public String toString(int id_client){
 //    contrats.remove(c);
 //}
 
-public void ajouterClient(Client c){
-    clients.add(c);
-}
 
-public void affClients (){
-    for (int i=0;i<len)
+public static void affClients (ArrayList<Client> clients){
+    for (int i=0;i<nombreClients;i++){
+         System.out.println( "id:"+clients.get(i).id_client+"| Nom: " + clients.get(i).getNom()+ "| Prénom: " + clients.get(i).getPrenom());
+    }
 }
 
     

@@ -6,11 +6,20 @@ public class Prog_principale {
         Client client1 = new Client(123456,"emna", "mmmm");
         Client client2 = new Client(253859,"leila", "pppp");
         Client client3 = new Client(253564,"adem", "DDDDD");
-
-        List<Client> clients = new ArrayList<Client>();
+        ArrayList<Client> clients = new ArrayList<Client>();
         clients.add(client1);
         clients.add(client2);
         clients.add(client3);
+        Client.affClients(clients);
+
+        Agent Ag1 = new Agent(12,"aaa", "bbb");
+        Agent Ag2 = new Agent(36,"ccc", "dd");
+        Agent Ag3 = new Agent(56,"ee", "ff");
+        ArrayList<Agent> Agents = new ArrayList<Agent>();
+        Agents.add(Ag1);
+        Agents.add(Ag2);
+        Agents.add(Ag3);
+        Agent.affAgents(Agents);
     
 
         Scanner sc =new Scanner(System.in);

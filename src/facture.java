@@ -54,6 +54,5 @@ public Facture(){};
           return nbreJ*F.getPrix_journalie_convenu();
        
       }
-
-     
+     }     
      

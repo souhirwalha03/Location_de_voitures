@@ -1,7 +1,8 @@
 import java.util.*;
 
 
-public class Contrat {
+ public class Contrat {
+
     private int numcontrat;
     private String datecontrat;
     private float kmdedepart;

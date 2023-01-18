@@ -1,98 +1,101 @@
-import java.util.*;
-
-public class Vehicule{
+public class vehicule {
 	
-    private int idVehicule;
-    private int kilometrage ;
-    private int nbrPlaces ;
-    private float prixlocation;
-    private String modele ;
-    private String marque;
-    private String immatriculation ;
-    private String couleur;
-    private String puissance;  
+        private int idVehicule;
+        private int kilometrage ;
+        private int nbrPlaces ;
+        private float prixlocation;
+        private String marque;
+        private String immatriculation ;
+        private String couleur;
+        private int dispo;  
+    
+       //constructeur
+       
+        public vehicule(int idVehicule, int kilometrage , int nbrPlaces , float prixlocation , String marque , String immatriculation , String couleur, int dispo)
+        {
+            this.idVehicule=idVehicule;
+            this.kilometrage=kilometrage;
+            this.nbrPlaces=nbrPlaces;
+            this.prixlocation=prixlocation;
+            this.marque=marque;
+            this.immatriculation=immatriculation;
+            this.couleur=couleur;
+            this.dispo=dispo;        }
+        public vehicule(){}
 
-   //constructeur
 
-    public Vehicule(int idVehicule, int kilometrage , int nbrPlaces , float prixlocation , String modele , String marque , String immatriculation , String couleur ,  String puissance)
-    {
-        this.idVehicule=idVehicule;
-        this.kilometrage=kilometrage;
+    // getters & setters 
+    
+        public int getIdVehicule(){
+        return this.idVehicule;
+        }
+        public void setIdVehicule( int idVehicule ){
+         this.idVehicule=idVehicule ;
+        }
+    
+       public int getKilometrage(){
+        return this.kilometrage;
+       }
+       public void setKilometrage ( int kilometrage){
+          this.kilometrage=kilometrage;
+       }
+    
+       public int getNbrPlaces()
+       { 
+        return this.nbrPlaces;
+       }
+       public void setNbrPlaces (int nbrPlaces){
         this.nbrPlaces=nbrPlaces;
-        this.prixlocation=prixlocation;
-        this.modele=modele;
-        this.marque=marque;
-        this.immatriculation=immatriculation;
-        this.couleur=couleur;
-        this.puissance=puissance;
-    }
-    public Vehicule(){}
+       }
+    
+        public float getPrixlocation(){
+            return this.prixlocation;
+        }
+        public void setPrixlocation(float prixlocation){
+            this.prixlocation=prixlocation;
+        }
+    
+        public String getMarque() {
+            return this.marque;
+        }
+        public void setMarque( String marque ) {
+            this.marque=marque ;
+        }
+    
+        public String getImmatriculation(){
+            return this.immatriculation;
+        }
+        public void setImmatriculation( String immatriculation){
+            this.immatriculation=immatriculation ;
+        }
+    
+        public String getCouleur(){
+            return this.couleur;
+        }
+        public void setCouleur( String couleur ){
+            this.couleur=couleur;
+        }
+        public int getDispo(){
+            return this.dispo;}
+        public void setDispo(int dispo){
+        this.dispo=dispo;
+        }
 
-// getters & setters 
-    public int getIdVehicule(){
-    return this.idVehicule;
-    }
-    public void setIdVehicule( int idVehicule ){
-     this.idVehicule=idVehicule ;
-    }
+        ///methode d'affichage 
+        public void affichervehicule(vehicule V){
+         
+        System.out.println("Id:"+ idVehicule + "Kilometrage\n"+ kilometrage + "Nombre de places:\n"+nbrPlaces + "Prix de location\n"+prixlocation + "Marque\n"+ marque + "Immatriculation:\n"+ immatriculation +"Disponibilité:\n" + dispo);
+        }
 
-   public int getKilometrage(){
-    return this.kilometrage;
-   }
-   public void setKilometrage ( int kilometrage){
-      this.kilometrage=kilometrage;
-   }
+        /// methode de verification de disponibilité 
+        public String EstDisponible(vehicule V){
+            if ( V.dispo==0 )  {
+                return("La voiture est disponible à louer");
+            } else {
+               return("La voiture est déjà louée ");
+            }
 
-   public int getNbrPlaces()
-   { 
-    return this.nbrPlaces;
-   }
-   public void setNbrPlaces (int nbrPlaces){
-    this.nbrPlaces=nbrPlaces;
-   }
-
-    public float getPrixlocation(){
-        return this.prixlocation;
+       
+        }
     }
-    public void setPrixlocation(float prixlocation){
-        this.prixlocation=prixlocation;
-    }
-
-    public String getModele(){
-        return this.modele;
-    }
-    public void setModele(String modele){
-        this.modele=modele;
-    }
-
-    public String getMarque(){
-        return this.marque;
-    }
-    public void setMarque(){
-        this.marque=marque;
-    }
-
-    public String getImmatriculation(){
-        return this.immatriculation;
-    }
-    public void setImmatriculation(){
-        this.immatriculation=immatriculation;
-    }
-
-    public String getCouleur(){
-        return this.couleur;
-    }
-    public void setCouleur(){
-        this.couleur=couleur;
-    }
-
-    public String getPuissance(){
-        return this.puissance;
-    }
-    public void setPuissance(){
-        this.puissance=puissance;
-    }
-}
-
-
 

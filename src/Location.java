@@ -2,6 +2,8 @@ public class Location {
 
     private Client client;
     private Vehicule vehicule;
+
+    
     public String dateDebut ;
     public int duree;
 

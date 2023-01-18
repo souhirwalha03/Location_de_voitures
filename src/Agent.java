@@ -10,8 +10,8 @@ public class Agent extends Utilisateur {
    
     
 //constructeur
-    public Agent (int id_agent,String nom, String prenom, String login, String mdp ){
-        super(nom, prenom,login, mdp);
+    public Agent (int id_agent,String nom, String prenom){
+        super(nom, prenom);
         this.id_agent=id_agent;
         contrats = new  ArrayList<Contrat>();
         factures = new  ArrayList<Facture>();
@@ -44,14 +44,9 @@ public class Agent extends Utilisateur {
         this.contrats = contrats;
     }
 
-
-//toString
-
-
-
 //afficher liste d'agent
      public String afficher_agent(){
-        return toString();
+        return toString(getidAgent());
 
     }
 

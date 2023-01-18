@@ -77,9 +77,10 @@ public class Vehicule {
         }
 
 ///methode d'affichage 
-        public void affichervehicule(Vehicule V){
+        public String toString(){
          
-            System.out.println("Id:"+ idVehicule + "Kilometrage\n"+ kilometrage +"Marque\n"+ marque  +"Disponibilité:\n" + dispo);
+            return "Id:"+ this.idVehicule + "Kilometrage\n"+ this.kilometrage
+             +"Marque\n"+ this.marque  +"Disponibilité:\n" + this.dispo+"gérer par:\n"+this.agent+"louer par:\n"+this.clients;
         }
 
 /// methode de verification de disponibilité 

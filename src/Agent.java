@@ -51,7 +51,7 @@ public class Agent extends Utilisateur {
 
     public static void affAgents (ArrayList<Agent> Agents){
         for (int i=0;i<nombreAgents;i++){
-            System.out.println("La liste des Agents:");
+            
              System.out.println( "id:"+Agents.get(i).id_agent+" | Nom: " + Agents.get(i).getNom()+ " | Prénom: "+ Agents.get(i).getPrenom());
         }
     }

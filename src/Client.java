@@ -64,7 +64,7 @@ public String toString(int id_client){
 
 public static void affClients (ArrayList<Client> clients){
     for (int i=0;i<nombreClients;i++){
-        System.out.println("La liste des Clients:");
+        
          System.out.println( "id:"+clients.get(i).id_client+" | Nom: " + clients.get(i).getNom()+ " | Prénom: " + clients.get(i).getPrenom());
     }
 }

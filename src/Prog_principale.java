@@ -10,6 +10,7 @@ public class Prog_principale {
         clients.add(client1);
         clients.add(client2);
         clients.add(client3);
+        System.out.println("La liste des Clients:");
         Client.affClients(clients);
 
         Agent Ag1 = new Agent(124658,"aaa", "bbb");
@@ -19,6 +20,7 @@ public class Prog_principale {
         Agents.add(Ag1);
         Agents.add(Ag2);
         Agents.add(Ag3);
+        System.out.println("La liste des Agents:");
         Agent.affAgents(Agents);
     
 
@@ -30,6 +32,7 @@ public class Prog_principale {
     vehicules.add(vehicule1);
     vehicules.add(vehicule2);
     vehicules.add(vehicule3);
+    System.out.println("La liste des vehicules:");
     Vehicule.afficher_vehicules(vehicules);
         
     

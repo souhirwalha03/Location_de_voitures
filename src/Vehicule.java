@@ -98,7 +98,7 @@ public class Vehicule {
             Scanner sc = new Scanner(System.in);
             int nombreV = sc.nextInt();
             for (int i=0;i<nombreV;i++){
-                System.out.println("La liste des vehicules:");
+                
                  System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
             }
 }

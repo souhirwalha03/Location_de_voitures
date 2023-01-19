@@ -86,7 +86,7 @@ public class Vehicule {
 /// methode de verification de disponibilité 
         public static String EstDisponible(Vehicule V){
             
-            if ( V.dispo==0 )  {
+            if ( V.dispo==1 )  {
                return ("La voiture demandée est disponible à louer");
             } else {
                 return("La voiture demandée est déjà louée");

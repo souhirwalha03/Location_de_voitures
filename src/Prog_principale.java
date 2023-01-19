@@ -38,9 +38,12 @@ public class Prog_principale {
         Vehicule.vehicules.add(vehicule3);
         System.out.println("La liste des vehicules:");
         Vehicule.afficher_vehicules(Vehicule.vehicules);
-        
+        // disponibilité
+      System.out.println(Vehicule.EstDisponible(vehicule1));
+      System.out.println(Vehicule.EstDisponible(vehicule2));
+      System.out.println(Vehicule.EstDisponible(vehicule3));
+      
     
 		
-        
     }
 }

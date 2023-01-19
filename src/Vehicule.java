@@ -84,11 +84,12 @@ public class Vehicule {
         }
 
 /// methode de verification de disponibilité 
-        public String EstDisponible(Vehicule V){
+        public static String EstDisponible(Vehicule V){
+            
             if ( V.dispo==0 )  {
-                return("La voiture est disponible à louer");
+               return ("La voiture demandée est disponible à louer");
             } else {
-               return("La voiture est déjà louée ");
+                return("La voiture demandée est déjà louée");
             }
 
        

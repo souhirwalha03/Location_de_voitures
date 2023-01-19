@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Prog_principale {
     public static void main(String[] args) {
+        //Clients
         Client client1 = new Client(123456,"emna", "mmmm");
         Client client2 = new Client(253859,"leila", "pppp");
         Client client3 = new Client(253564,"adem", "DDDDD");
@@ -12,7 +13,9 @@ public class Prog_principale {
         clients.add(client3);
         System.out.println("La liste des Clients:");
         Client.affClients(clients);
+        
 
+        //Agents
         Agent Ag1 = new Agent(124658,"aaa", "bbb");
         Agent Ag2 = new Agent(365685,"ccc", "dd");
         Agent Ag3 = new Agent(561225,"ee", "ff");
@@ -24,6 +27,7 @@ public class Prog_principale {
         Agent.affAgents(Agents);
     
 
+        //Vehicules
         Scanner sc =new Scanner(System.in);
      Vehicule vehicule1 = new Vehicule(85889, 1000, "Polo" , 0, Ag3);
      Vehicule vehicule2 = new Vehicule(85899, 1100, "Fiat" , 1, Ag3);

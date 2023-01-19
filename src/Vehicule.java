@@ -80,7 +80,7 @@ public class Vehicule {
         public String toString(){
          
             return "Id:"+ this.idVehicule + "Kilometrage\n"+ this.kilometrage
-             +"Marque\n"+ this.marque  +"Disponibilité:\n" + this.dispo+"gérer par:\n"+this.agent+"louer par:\n"+this.clients;
+             +"Marque\n"+ this.marque  +"Disponibilité:\n" + this.dispo+"gérer par:\n"+this.agent+"louée par:\n"+this.clients;
         }
 
 /// methode de verification de disponibilité 
@@ -93,8 +93,16 @@ public class Vehicule {
 
        
         }
+        public static void afficher_vehicules (ArrayList<Vehicule> vehicules){
+            System.out.println("Entrer le nombre de voitures de l'agence");
+            Scanner sc = new Scanner(System.in);
+            int nombreV = sc.nextInt();
+            for (int i=0;i<nombreV;i++){
+                System.out.println("La liste des vehicules:");
+                 System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
+            }
 }
-    
+}
 
 
 

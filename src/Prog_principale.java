@@ -23,24 +23,16 @@ public class Prog_principale {
     
 
         Scanner sc =new Scanner(System.in);
-
-        //// creation d'un tableau de vehicules
-        System.out.println("Donner le nombre de vehicules de l'agence");
-        int nombre = sc.nextInt();
-        Vehicule[] tableauvehicules = new Vehicule[nombre];
+     Vehicule vehicule1 = new Vehicule(85889, 1000, "Polo" , 0, Ag3);
+     Vehicule vehicule2 = new Vehicule(85899, 1100, "Fiat" , 1, Ag3);
+     Vehicule vehicule3 = new Vehicule(85000, 1500, "Mercedes" , 1, Ag3);
+     ArrayList<Vehicule> vehicules = new ArrayList<Vehicule>();
+    vehicules.add(vehicule1);
+    vehicules.add(vehicule2);
+    vehicules.add(vehicule3);
+    Vehicule.afficher_vehicules(vehicules);
         
-        //// remplissage du tableau 
-        for ( int i=1; i<tableauvehicules.length+1;i++) {
-        System.out.println("Entrer l'id de la véhicule"+ " " + i);
-        int idVehicule = sc.nextInt();
-        System.out.println("Entrer le nombre de places");
-        int nbrPlaces = sc.nextInt();
-        System.out.println("Entrer la marque");
-        String marque = sc.next();
-        System.out.println("Entrer 1 si elle est dispo et 0 sinon");
-        int dispo = sc.nextInt();
-        tableauvehicules[i] = new Vehicule();
-        }
+    
 		
         
     }

@@ -14,7 +14,7 @@ public class Vehicule {
         
 //constructeur
        
-        public Vehicule(int idVehicule, int kilometrage , String marque , int dispo,Agent agent)
+        public Vehicule(int idVehicule, int kilometrage , String marque , int dispo,Agent Agent)
         {
             this.idVehicule=idVehicule;
             this.kilometrage=kilometrage;
@@ -76,11 +76,11 @@ public class Vehicule {
             this.dispo=dispo;
         }
 
-///methode d'affichage 
+///methode d'affichage d'un vehicule 
         public String toString(){
          
-            return "Id:"+ this.idVehicule + "Kilometrage\n"+ this.kilometrage
-             +"Marque\n"+ this.marque  +"Disponibilité:\n" + this.dispo+"gérer par:\n"+this.agent+"louée par:\n"+this.clients;
+            return "\nCette vehicule a un Id:"+ this.idVehicule + "\nde Kilometrage:"+ this.kilometrage
+             +"\nMarque:"+ this.marque  +"\nDisponibilité:" + this.dispo+"\ngérer par:"+this.agent+"\nlouée par:"+this.clients;
         }
 
 /// methode de verification de disponibilité 
@@ -92,6 +92,7 @@ public class Vehicule {
                 return("La voiture demandée est déjà louée");
             }
 
+///methode d'affichage de la liste des vehicules
        
         }
         public static void afficher_vehicules (ArrayList<Vehicule> vehicules){

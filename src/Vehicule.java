@@ -7,7 +7,7 @@ public class Vehicule {
         private int kilometrage ;
         private String marque;
         private int dispo; 
-        
+        public static ArrayList<Vehicule> vehicules = new ArrayList<Vehicule>();
 //associations
         private ArrayList <Client> clients;
         private Agent agent;
@@ -25,7 +25,7 @@ public class Vehicule {
         }
 
         public Vehicule(){}
-
+       
 
 // getters   
         public ArrayList <Client> getclient() {

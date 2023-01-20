@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Objects;
 
 import javax.swing.text.StringContent;
 
@@ -112,14 +113,13 @@ public class Vehicule {
                     }
                 //chercher vehicule
 
-           // public static String chercher(int id){
-           //      for( int i=0 ; i<vehicules.size(); i++){
-           // if (vehicules.get(i).idVehicule==id){
-            //    return vehicules.get(i).toString();
-           // }
-       // }
-    }
-
-
-
+          // public static Vehicule chercher(int id){
+               // for( int i=0 ; i<vehicules.size(); i++){
+                   // if (vehicules.get(i).idVehicule==id){
+                         //return vehicules.get(i);
+          // }
+       
+//}
+          // }
+        }
 

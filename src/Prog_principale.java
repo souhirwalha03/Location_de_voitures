@@ -52,9 +52,7 @@ public class Prog_principale {
          System.out.println(Facture.Calcul_montant(location1));
          System.out.println(Facture.Calcul_montant(location2));
        
-    //consulter vehicule
-	    System .out.println(vehicule1.toString());
-        System .out.println(Ag3.toString());
+    
     }}
     
    

@@ -8,12 +8,11 @@ public class Vehicule {
         private int dispo; 
         public static int nombreVehicules;
         public static ArrayList<Vehicule> vehicules = new ArrayList<Vehicule>();
-//associations
+ //associations
         private ArrayList <Client> clients;
         private Agent agent;
         
-//constructeur
-       
+ //constructeur
         public Vehicule(int idVehicule, int kilometrage , String marque , int dispo,Agent Agent)
         {
             this.idVehicule=idVehicule;
@@ -29,7 +28,7 @@ public class Vehicule {
         public Vehicule(){nombreVehicules++;}
        
 
-// getters   
+ // getters   
         public ArrayList <Client> getclient() {
             return clients ;
         }
@@ -53,6 +52,7 @@ public class Vehicule {
         public int getDispo(){
             return this.dispo;
         }
+
 //setters
         public void setClient (ArrayList <Client> clients){
             this.clients = clients;
@@ -78,39 +78,16 @@ public class Vehicule {
             this.dispo=dispo;
         }
 
-///methode d'affichage d'un vehicule 
+ ///toString
         public String toString(){
          
-            return "\nCette vehicule a un Id:"+ this.idVehicule + "\nde Kilometrage:"+ this.kilometrage
-             +"\nMarque:"+ this.marque  +"\nDisponibilité:" + this.dispo +"\ngérée par:"+this.agent+"\nlouée par:"+ this.clients;
+            return "Id:"+ this.idVehicule + " | Kilometrage:"+ this.kilometrage
+             +" | Marque:"+ this.marque  +" | Disponibilité:" + this.dispo +" | gérée par:"+this.agent+" | louée par:"+ this.clients;
         }
 
+ //methodes
 
-
-/// methode de verification de disponibilité 
-        public static String EstDisponible(Vehicule V){
-            
-            if ( V.dispo==1 )  {
-               return ("La voiture demandée est disponible à louer");
-            } else {
-                return("La voiture demandée est déjà louée");
-            }
-
-///methode d'affichage de la liste des vehicules
-       
-        }
-        
-        public static void afficher_vehicules (ArrayList<Vehicule> vehicules){
-           
-                for (int i=0;i<nombreVehicules;i++){ 
-                    if (i==0){
-                        System.out.println("La liste des vehicules:");
-                    }
-                    System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
-                }
-        }
-            
-
+ //ajouer
         public static void  ajouter_vehicule(){
             Scanner sc =new Scanner(System.in);
             System.out.println("Donner le nombre de vehicules a ajouter");
@@ -122,6 +99,8 @@ public class Vehicule {
                 v.setIdVehicule(sc.nextInt()); 
                 System.out.println("Entrer la marque");
                 v.setMarque(sc.next());
+                System.out.println("Entrer le kilométrage de la véhicule");
+                v.setKilometrage(sc.nextInt());
                 System.out.println("Entrer 1 si elle est dispo et 0 sinon");
                 v.setDispo(sc.nextInt());
 
@@ -131,6 +110,39 @@ public class Vehicule {
             }
         }
 
+ ///methode d'affichage de la liste des vehicules
+        public static void afficher_vehicules (ArrayList<Vehicule> vehicules){
+           
+            for (int i=0;i<nombreVehicules;i++){ 
+                if (i==0){
+                    System.out.println("La liste des vehicules:");
+                }
+                System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
+                
+            }
+    }
+
+ /// methode de verification de disponibilité 
+        public static String EstDisponible(Vehicule V){
+            
+            if ( V.dispo==1 )  {
+               return ("La voiture demandée est disponible à louer");
+            } else {
+                return("La voiture demandée est déjà louée");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        
            // for (int i=0;i<vehicules.size();i++){
             
              //    System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());

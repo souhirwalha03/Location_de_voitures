@@ -24,21 +24,28 @@ public class Prog_principale {
     
 
      //Vehicules
-        Scanner sc =new Scanner(System.in);
-        Vehicule vehicule1 = new Vehicule(85889, 1000, "Polo" , 0, Ag3);
-        Vehicule vehicule2 = new Vehicule(85899, 1100, "Fiat" , 0, Ag3);
-        Vehicule vehicule3 = new Vehicule(85000, 1500, "Mercedes" , 1, Ag3);
-         //ArrayList<Vehicule> vehicules = new ArrayList<Vehicule>();
-        Vehicule.vehicules.add(vehicule1);
-        Vehicule.vehicules.add(vehicule2);
-        Vehicule.vehicules.add(vehicule3);
+        //ajouter une nouvelle vehicule
         Vehicule.ajouter_vehicule();
+        //affichage de la liste des vehicules 
         Vehicule.afficher_vehicules(Vehicule.vehicules);
 
-     // disponibilité
+        //nouveau vehicule
+        Vehicule vehicule1 = new Vehicule(85889, 1000, "Polo" , 0, Ag3);
+        //ajouter a la liste des vehicules
+        Vehicule.vehicules.add(vehicule1);
+        //afficher details de la vehicules vehicule1 
+        System.out.println(vehicule1.toString()); 
+        //disponibilité de la vehicule vehicule1
         System.out.println(Vehicule.EstDisponible(vehicule1));
+
+        //meme pour vehicule2 et vehicule3
+        Vehicule vehicule2 = new Vehicule(85899, 1100, "Fiat" , 0, Ag3);
+        Vehicule vehicule3 = new Vehicule(85000, 1500, "Mercedes" , 1, Ag3);
+        Vehicule.vehicules.add(vehicule2);
+        Vehicule.vehicules.add(vehicule3);
         System.out.println(Vehicule.EstDisponible(vehicule2));
         System.out.println(Vehicule.EstDisponible(vehicule3));
+        
       
      //Locations
      

@@ -48,8 +48,8 @@ public class Facture {
      System.out.println("L'id de cette facture est:"+idfac+ "\n Elle effectuée le "+datefac + "\nLe prix journalie convenu");
      }
       ///methode de calcul du montant
+      
       public static double Calcul_montant(Location L){
-     return L.duree*L.prix_journalie_convenu;
-         
-}
+          return L.duree*L.prix_journalie_convenu; 
+     }
 }

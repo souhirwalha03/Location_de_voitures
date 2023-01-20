@@ -5,9 +5,12 @@ public class Agent extends Utilisateur {
 
     private int id_agent;
     public static ArrayList<Agent> Agents = new ArrayList<Agent>();
+    public static int nombreAgents;
 
 //associations
     private ArrayList <Facture> factures;
+    private ArrayList <Vehicule> vehicules;
+
    
     
 //constructeur
@@ -40,14 +43,26 @@ public class Agent extends Utilisateur {
         this.factures = factures;
     }
 
-   
 
-//afficher liste d'agent
-     //public String afficher_agent(){
-     //   return toString(getidAgent());
+//methode ajouer un agent
+public static void  ajouter_agent(){
+        Scanner sc =new Scanner(System.in);
+        Agent ag=new Agent();
 
-    //}
+        System.out.println("id:");
+        ag.setidAgent(sc.nextInt()); 
+        System.out.println("Nom");
+        ag.setNom(sc.next());
+        System.out.println("Prenom");
+        ag.setPrenom(sc.next());
+        
+        nombreAgents++;
+        Agent.Agents.add(ag);
+    
+}
 
+
+ //methode afficher liste des agents
     public static void affAgents (ArrayList<Agent> Agents){
         for (int i=0;i<nombreAgents;i++){
             { if (i==0){
@@ -57,8 +72,8 @@ public class Agent extends Utilisateur {
             }
         }
     }
+
+
     
-    public String toString(){
-        return this.getNom();
-    }
+   
 }

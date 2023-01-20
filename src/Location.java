@@ -1,13 +1,15 @@
 import java.util.*;
 public class Location {
 
-    private Client client;
-    private Vehicule vehicule;
-
+    
     
     public String dateDebut ;
     public int duree;
     public float prix_journalie_convenu;
+
+    private Client client;
+    private Vehicule vehicule;
+
 
     public Vehicule getVehiculet(){
         return this.vehicule;

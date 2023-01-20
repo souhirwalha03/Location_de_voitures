@@ -5,8 +5,6 @@ public class Utilisateur {
     
     private String nom;
     private String prenom;
-    public static int nombreClients;
-    public static int nombreAgents;
 
 
     

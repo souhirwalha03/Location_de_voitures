@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Agent extends Utilisateur {
     private int id_agent;
+    public static ArrayList<Agent> Agents = new ArrayList<Agent>();
 
 //associations
     private ArrayList <Facture> factures;
@@ -51,8 +52,11 @@ public class Agent extends Utilisateur {
 
     public static void affAgents (ArrayList<Agent> Agents){
         for (int i=0;i<nombreAgents;i++){
-            
+            { if (i==0){
+                System.out.println("La liste des Agents:");
+                }
              System.out.println( "id:"+Agents.get(i).id_agent+" | Nom: " + Agents.get(i).getNom()+ " | Prénom: "+ Agents.get(i).getPrenom());
+            }
         }
     }
     

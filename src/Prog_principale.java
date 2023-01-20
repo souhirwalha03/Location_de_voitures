@@ -7,24 +7,20 @@ public class Prog_principale {
         Client client1 = new Client(123456,"emna", "mmmm");
         Client client2 = new Client(253859,"leila", "pppp");
         Client client3 = new Client(253564,"adem", "DDDDD");
-        ArrayList<Client> clients = new ArrayList<Client>();
-        clients.add(client1);
-        clients.add(client2);
-        clients.add(client3);
-        System.out.println("La liste des Clients:");
-        Client.affClients(clients);
+        Client.clients.add(client1);
+        Client.clients.add(client2);
+        Client.clients.add(client3);
+        Client.affClients(Client.clients);
         
 
     //Agents
         Agent Ag1 = new Agent(124658,"aaa", "bbb");
         Agent Ag2 = new Agent(365685,"ccc", "dd");
         Agent Ag3 = new Agent(561225,"ee", "ff");
-        ArrayList<Agent> Agents = new ArrayList<Agent>();
-        Agents.add(Ag1);
-        Agents.add(Ag2);
-        Agents.add(Ag3);
-        System.out.println("La liste des Agents:");
-        Agent.affAgents(Agents);
+        Agent.Agents.add(Ag1);
+        Agent.Agents.add(Ag2);
+        Agent.Agents.add(Ag3);
+        Agent.affAgents(Agent.Agents);
     
 
     //Vehicules
@@ -36,7 +32,6 @@ public class Prog_principale {
         Vehicule.vehicules.add(vehicule1);
         Vehicule.vehicules.add(vehicule2);
         Vehicule.vehicules.add(vehicule3);
-        System.out.println("La liste des vehicules:");
         Vehicule.afficher_vehicules(Vehicule.vehicules);
 
     // disponibilité

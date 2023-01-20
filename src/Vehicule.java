@@ -9,6 +9,7 @@ public class Vehicule {
         private int kilometrage ;
         private String marque;
         private int dispo; 
+        public static int nombreVoitures;
         public static ArrayList<Vehicule> vehicules = new ArrayList<Vehicule>();
 //associations
         private ArrayList <Client> clients;
@@ -24,7 +25,8 @@ public class Vehicule {
             this.dispo=dispo;    
             this.agent=agent;
             clients = new  ArrayList<Client>();  
-           
+            nombreVoitures ++;  
+
         }
 
         public Vehicule(){}
@@ -101,14 +103,21 @@ public class Vehicule {
        
         }
         public static void afficher_vehicules (ArrayList<Vehicule> vehicules){
-           try{ System.out.println("Entrer le nombre de voitures de l'agence");
-            Scanner sc = new Scanner(System.in);
-            int nombreV = sc.nextInt();
-            for (int i=0;i<nombreV;i++){
+           try{ 
+                System.out.println("Entrer le nombre de voitures de l'agence");
+                Scanner sc = new Scanner(System.in);
+                int nombreV = sc.nextInt();
+
+                for (int i=0;i<nombreV;i++){ 
+                    if (i==0){
+                        System.out.println("La liste des vehicules:");
+                    }
             
-                 System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
-            }}
-            catch( IndexOutOfBoundsException e){ System.out.println("\nLe nombre de vehicules entré est supérieur au nombre de véhicules de l'agence");}
+                    System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
+                }
+            }
+            catch( IndexOutOfBoundsException e){
+                 System.out.println("\nLe nombre de vehicules entré est supérieur au nombre de véhicules de l'agence");}
                     }
                 //chercher vehicule
 

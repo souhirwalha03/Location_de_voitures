@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Client extends Utilisateur {
     private int id_client;
-    //private static List<Client> clients = new ArrayList<Client>();
+    public static ArrayList<Client> clients = new ArrayList<Client>();
 
 
 //associations
@@ -64,9 +64,11 @@ public String toString(int id_client){
 
 public static void affClients (ArrayList<Client> clients){
     for (int i=0;i<nombreClients;i++){
-        
-         System.out.println( "id:"+clients.get(i).id_client+" | Nom: " + clients.get(i).getNom()+ " | Prénom: " + clients.get(i).getPrenom());
-    }
+        { if (i==0){
+            System.out.println("La liste des Clients:");
+           }
+            System.out.println( "id:"+clients.get(i).id_client+" | Nom: " + clients.get(i).getNom()+ " | Prénom: " + clients.get(i).getPrenom());
+           }}
 }
 
     

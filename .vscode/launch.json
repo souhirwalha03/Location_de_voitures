@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Prog_principale",
+            "request": "launch",
+            "mainClass": "Prog_principale",
+            "projectName": "Location_de_voitures_ecbebb96"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

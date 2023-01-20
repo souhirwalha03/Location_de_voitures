@@ -1,15 +1,12 @@
 import java.util.*;
 
-import javax.swing.text.StringContent;
-
-
 public class Vehicule {
 	
         private int idVehicule;
         private int kilometrage ;
         private String marque;
         private int dispo; 
-        public static int nombreVoitures;
+        public static int nombreVehicules;
         public static ArrayList<Vehicule> vehicules = new ArrayList<Vehicule>();
 //associations
         private ArrayList <Client> clients;
@@ -25,11 +22,11 @@ public class Vehicule {
             this.dispo=dispo;    
             this.agent=agent;
             clients = new  ArrayList<Client>();  
-            nombreVoitures ++;  
+            nombreVehicules ++;  
 
         }
 
-        public Vehicule(){}
+        public Vehicule(){nombreVehicules++;}
        
 
 // getters   
@@ -102,33 +99,53 @@ public class Vehicule {
 ///methode d'affichage de la liste des vehicules
        
         }
+        
         public static void afficher_vehicules (ArrayList<Vehicule> vehicules){
-           try{ 
-                System.out.println("Entrer le nombre de voitures de l'agence");
-                Scanner sc = new Scanner(System.in);
-                int nombreV = sc.nextInt();
-
-                for (int i=0;i<nombreV;i++){ 
+           
+                for (int i=0;i<nombreVehicules;i++){ 
                     if (i==0){
                         System.out.println("La liste des vehicules:");
                     }
-            
                     System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
                 }
+        }
+            
+
+        public static void  ajouter_vehicule(){
+            Scanner sc =new Scanner(System.in);
+            System.out.println("Donner le nombre de vehicules a ajouter");
+            int nombre = sc.nextInt();
+            
+            for ( int i=0 ; i<nombre ; i++) {
+                Vehicule v=new Vehicule();
+                System.out.println("Entrer l'id de la véhicule" + i);
+                v.setIdVehicule(sc.nextInt()); 
+                System.out.println("Entrer la marque");
+                v.setMarque(sc.next());
+                System.out.println("Entrer 1 si elle est dispo et 0 sinon");
+                v.setDispo(sc.nextInt());
+
+                nombreVehicules++;
+
+                Vehicule.vehicules.add(v);
             }
-            catch( IndexOutOfBoundsException e){
-                 System.out.println("\nLe nombre de vehicules entré est supérieur au nombre de véhicules de l'agence");}
-                    }
-                //chercher vehicule
+        }
 
-           // public static String chercher(int id){
-           //      for( int i=0 ; i<vehicules.size(); i++){
-           // if (vehicules.get(i).idVehicule==id){
-            //    return vehicules.get(i).toString();
-           // }
-       // }
-    }
+           // for (int i=0;i<vehicules.size();i++){
+            
+             //    System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
+           // }}
+           
 
+           //chercher vehicule
 
-
+          // public static Vehicule chercher(int id){
+               // for( int i=0 ; i<vehicules.size(); i++){
+                   // if (vehicules.get(i).idVehicule==id){
+                         //return vehicules.get(i);
+          // }
+       
+//}
+          // }
+        }
 

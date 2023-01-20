@@ -2,6 +2,7 @@ import java.util.*;
 
 
 public class Agent extends Utilisateur {
+
     private int id_agent;
     public static ArrayList<Agent> Agents = new ArrayList<Agent>();
 
@@ -27,8 +28,6 @@ public class Agent extends Utilisateur {
     public int getidAgent (){
         return this.id_agent;
     }
-
-    
     public ArrayList <Facture> getFacture() {
         return factures;
     }
@@ -37,7 +36,6 @@ public class Agent extends Utilisateur {
     public void setidAgent (int id_cient){
         this.id_agent = id_agent;
     }
-
     public void setFacture (ArrayList <Facture> factures){
         this.factures = factures;
     }

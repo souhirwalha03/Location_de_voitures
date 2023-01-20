@@ -21,7 +21,7 @@ public class Agent extends Utilisateur {
         nombreAgents++;
     }
 
-
+    
 //get
     public int getidAgent (){
         return this.id_agent;
@@ -56,7 +56,7 @@ public class Agent extends Utilisateur {
         }
     }
     
-    
-
-    
+    public String toString(){
+        return this.getNom();
+    }
 }

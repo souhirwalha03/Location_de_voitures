@@ -98,15 +98,12 @@ public class Vehicule {
        
         }
         public static void afficher_vehicules (ArrayList<Vehicule> vehicules){
-           try{ System.out.println("Entrer le nombre de voitures de l'agence");
-            Scanner sc = new Scanner(System.in);
-            int nombreV = sc.nextInt();
-            for (int i=0;i<nombreV;i++){
+           
+            for (int i=0;i<vehicules.size();i++){
             
                  System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
             }}
-            catch( IndexOutOfBoundsException e){ System.out.println("\nLe nombre de vehicules entré est supérieur au nombre de véhicules de l'agence");}
-                    }
+           
                 //chercher vehicule
 
           // public static Vehicule chercher(int id){

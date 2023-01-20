@@ -52,6 +52,7 @@ public class Prog_principale {
          System.out.println(Facture.Calcul_montant(location1));
          System.out.println(Facture.Calcul_montant(location2));
        
+         System.out.println(vehicule2.toString());
     
     }}
     

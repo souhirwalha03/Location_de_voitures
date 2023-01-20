@@ -1,5 +1,7 @@
 import java.util.*;
 
+import javax.swing.text.StringContent;
+
 
 public class Vehicule {
 	
@@ -21,7 +23,8 @@ public class Vehicule {
             this.marque=marque;
             this.dispo=dispo;    
             this.agent=agent;
-            clients = new  ArrayList<Client>();    
+            clients = new  ArrayList<Client>();  
+           
         }
 
         public Vehicule(){}
@@ -80,8 +83,10 @@ public class Vehicule {
         public String toString(){
          
             return "\nCette vehicule a un Id:"+ this.idVehicule + "\nde Kilometrage:"+ this.kilometrage
-             +"\nMarque:"+ this.marque  +"\nDisponibilité:" + this.dispo+"\ngérer par:"+this.agent+"\nlouée par:"+this.clients;
+             +"\nMarque:"+ this.marque  +"\nDisponibilité:" + this.dispo +"\ngérée par:"+this.agent+"\nlouée par:"+ this.clients;
         }
+
+
 
 /// methode de verification de disponibilité 
         public static String EstDisponible(Vehicule V){
@@ -103,9 +108,18 @@ public class Vehicule {
             
                  System.out.println( "id:"+vehicules.get(i).idVehicule+" | De kilometrage: " + vehicules.get(i).getKilometrage()+ " | De marque: " + vehicules.get(i).getMarque());
             }}
-            catch( IndexOutOfBoundsException e){System.out.println("\nLe nombre de vehicules entré est supérieur au nombre de véhicules de l'agence");}
-        }
-}
+            catch( IndexOutOfBoundsException e){ System.out.println("\nLe nombre de vehicules entré est supérieur au nombre de véhicules de l'agence");}
+                    }
+                //chercher vehicule
+
+           // public static String chercher(int id){
+           //      for( int i=0 ; i<vehicules.size(); i++){
+           // if (vehicules.get(i).idVehicule==id){
+            //    return vehicules.get(i).toString();
+           // }
+       // }
+    }
+
 
 
 

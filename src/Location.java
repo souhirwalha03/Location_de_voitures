@@ -1,3 +1,4 @@
+import java.util.*;
 public class Location {
 
     private Client client;
@@ -29,7 +30,18 @@ this.duree=duree;
 this.prix_journalie_convenu=prix_journalie_convenu;
 }
     
+    //Demande de location
+    //public static void demande(){
+       // System.out.println("Entrer l'id de la voiture que vous voulez louer");
+      //  Vehicule.afficher_vehicules(Vehicule.vehicules);
+        //Scanner sc = new Scanner(System.in);
+            //int choix = sc.nextInt();
+      // if choix.chercher().dispo==0{
+        //la voiture est louée : Exception}
+       // else{
+        //modifier dispo vehicule à 1
+      //  }
 
-    
+       //}
+    }
 
-}

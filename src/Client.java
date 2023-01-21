@@ -4,7 +4,7 @@ import java.util.*;
 public class Client extends Utilisateur {
     private int id_client;
     public static ArrayList<Client> clients = new ArrayList<Client>();
-    public static int nombreClients;
+    public static int nombreClients=0;
 
 
 //associations
@@ -33,7 +33,7 @@ public class Client extends Utilisateur {
     }
 
 //setter
-    public void setIdClient (int id_cient){
+    public void setIdClient (int id_client){
         this.id_client = id_client;
     }
 
@@ -43,8 +43,10 @@ public class Client extends Utilisateur {
 
 //toString
 
-public String toString(int id_client){
-    return toString(getIdClient());
+public String toString(){
+         
+    return "Id:"+ this.id_client + " | Nom:"+ this.getNom()
+     +" | Prenom:"+ this.getPrenom()  ;
 }
 
 //methode ajouter un client
@@ -59,18 +61,19 @@ public static void  ajouter_client(){
     System.out.println("Prenom");
     cl.setPrenom(sc.next());
     
-    nombreClients++;
     Client.clients.add(cl);
 }
 
 //method afficher la liste des clients
 public static void affClients (ArrayList<Client> clients){
     for (int i=0;i<nombreClients;i++){
-        { if (i==0){
-            System.out.println("La liste des Clients:");
-           }
+        { 
+            if (i==0){
+                System.out.println("La liste des Clients:");
+            }
             System.out.println( "id:"+clients.get(i).id_client+" | Nom: " + clients.get(i).getNom()+ " | Prénom: " + clients.get(i).getPrenom());
-           }}
+        }
+    }
 }
 
 

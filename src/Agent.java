@@ -43,6 +43,13 @@ public class Agent extends Utilisateur {
         this.factures = factures;
     }
 
+//toString
+public String toString(){
+         
+    return "Id:"+ this.id_agent + " | Nom:"+ this.getNom()
+     +" | Prenom:"+ this.getPrenom()  ;
+}
+
 
 //methode ajouer un agent
 public static void  ajouter_agent(){
@@ -56,7 +63,6 @@ public static void  ajouter_agent(){
         System.out.println("Prenom");
         ag.setPrenom(sc.next());
         
-        nombreAgents++;
         Agent.Agents.add(ag);
     
 }

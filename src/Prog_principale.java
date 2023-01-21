@@ -16,7 +16,7 @@ public class Prog_principale {
          Client client3 = new Client(253564,"adem", "DDDDD");
          Client.clients.add(client2);
          Client.clients.add(client3);
-         System.out.println("2\n");
+         System.out.println("\n");
 
 
      //Agents
@@ -43,7 +43,7 @@ public class Prog_principale {
         System.out.println(vehicule1.toString()); 
         System.out.println("\n");
         //disponibilité de la vehicule vehicule1
-        System.out.println(Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule1)));
+        Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule1));
         System.out.println("\n");
 
         //meme pour vehicule2 et vehicule3
@@ -51,8 +51,8 @@ public class Prog_principale {
         Vehicule vehicule3 = new Vehicule(85000, 1500, "Mercedes" , 1, Ag3);
         Vehicule.vehicules.add(vehicule2);
         Vehicule.vehicules.add(vehicule3);
-        System.out.println(Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule2)));
-        System.out.println(Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule3)));
+        Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule2));
+        Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule3));
 
         System.out.println("");
         int x;
@@ -91,14 +91,17 @@ public class Prog_principale {
             break;
 
             case 7:
+           
                System.out.println( "choisir l'id de la véhicule");
                System.out.println();
                Vehicule.afficher_vehicules();
-               int y=sc.nextInt();
-               int z=Vehicule.Recherche(y);
+               int id=sc.nextInt();
+               int index=Vehicule.Recherche(id);
                System.out.println();
-               System.out.println(Vehicule.EstDisponible(z));
+               Vehicule.EstDisponible(index);
+            
 
+               
             break;
             case 8:
 

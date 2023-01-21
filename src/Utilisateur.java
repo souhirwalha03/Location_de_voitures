@@ -36,15 +36,6 @@ public class Utilisateur {
         this.prenom=prenom;
     }
 
-    
-   //public String toString(){
-         
-      // return  this.nom+ this.prenom;
-  // }
-
-//public String toString(int id) {
- // return "id:"+id+"| Nom: " + this.getNom() + "| Prénom: " + this.getPrenom();
-//}
 
 
 

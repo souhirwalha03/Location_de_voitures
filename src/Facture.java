@@ -52,4 +52,5 @@ public class Facture {
       public static double Calcul_montant(Location L){
           return L.duree*L.prix_journalie_convenu; 
      }
+     
 }

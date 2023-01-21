@@ -122,25 +122,43 @@ public class Vehicule {
 }
 
 /// methode de verification de disponibilité 
-    public static String EstDisponible(int x){
+    public static void EstDisponible(int index){
+    
+        if (index == -1){
+            System.out.println("id not found");}
+            else 
+            {
+                if ( Vehicule.vehicules.get(index).getDispo() == 1 ) 
+                    System.out.println ("La voiture demandée est disponible à louer");
+
+                else if (Vehicule.vehicules.get(index).getDispo() == 0 )
+                {          
+                        System.out.println("La voiture demandée est déjà louée");
+                }
+                
+            }
+            
         
-        if ( Vehicule.vehicules.get(x).getDispo()==1 )  {
-           return ("La voiture demandée est disponible à louer");
-        } else {
-            return("La voiture demandée est déjà louée");
-        }
     }
 
 //recherche
-public static int Recherche (int x) {
+public static int Recherche (int id) {
 
-int v=1;
-for (int i=0;i<nombreVehicules;i++){
-    if ( Vehicule.vehicules.get(i).getIdVehicule() == x )
-    {
-            v = vehicules.indexOf(Vehicule.vehicules.get(i));
-    }
-}
+int v=-1;
+int i=0;
+
+
+        while(i<nombreVehicules) {
+            if ( Vehicule.vehicules.get(i).getIdVehicule() == id )
+            {
+                    v = vehicules.indexOf(Vehicule.vehicules.get(i));
+            }
+            i++;
+        }
+        if (v==-1)
+        System.out.println("wrong id");
+
+
  return v ;
 }
 

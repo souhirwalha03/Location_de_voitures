@@ -9,7 +9,7 @@ public class Agent extends Utilisateur {
 
 //associations
     private ArrayList <Facture> factures;
-    private ArrayList <Vehicule> vehicules;
+    private ArrayList <Vehicule> vehicules=Vehicule.vehicules;
 
    
     
@@ -68,6 +68,8 @@ public static void  ajouter_agent(){
 }
 
 
+
+
  //methode afficher liste des agents
     public static void affAgents (ArrayList<Agent> Agents){
         for (int i=0;i<nombreAgents;i++){
@@ -78,6 +80,8 @@ public static void  ajouter_agent(){
             }
         }
     }
+
+
 
 
     

@@ -103,6 +103,7 @@ public static int Recherche_client (int id) {
 
 //afficher la liste des vehicules reservée par un client
 public static void aff_vehicules(Client c ){
+    
     if (c.vehicules.size()==0)
         System.out.println("aucune réservation ");
         else {

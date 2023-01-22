@@ -84,9 +84,11 @@ public class Prog_principale {
         Location l1 = new Location(client1,vehicule1,2,"8/3/2023");
         Location.Locations.add(l1);
         Location.demande_location(Client.clients.indexOf(client1),Vehicule.vehicules.indexOf(vehicule1),2,"8/3/2023");
+        
         Location l2 = new Location(client1,vehicule2,2,"9/3/2023");
         Location.Locations.add(l2);
         Location.demande_location(Client.clients.indexOf(client1),Vehicule.vehicules.indexOf(vehicule2),2,"9/3/2023");
+        
         Location l3 = new Location(client3,vehicule1,2,"10/3/2023");
         Location.Locations.add(l3);
         Location.demande_location(Client.clients.indexOf(client3),Vehicule.vehicules.indexOf(vehicule1),2,"10/3/2023");
@@ -99,12 +101,13 @@ public class Prog_principale {
       do{
             Scanner sc =new Scanner(System.in);
             System.out.println("");
-            System.out.println( "1-Ajoutez un nouveau client.\n2-afficher la liste des clients.\n"+ 
-            "3-Ajoutez un nouveau agent.\n4-afficher la liste des agents.\n"+
-            "5-Ajoutez des vehicules.\n6-afficher la liste des vehicules.\n7-Vérifier la disponibilté d'une véhicule\n"
-            +"8-afficher les vehicules réservés par un client.\n9-afficher les clients qui réservent un véhicule\n10-Demande location\n"
-            +"11-afficher la liste des locations\n12-ajouter_facture\n13-afficher détails d'une location\n"+
-            "14-afficher liste des factures");
+            System.out.println( 
+            "1-Ajoutez un nouveau client.                 2-afficher la liste des clients.\n"+ 
+            "3-Ajoutez un nouveau agent.                  4-afficher la liste des agents.\n"+
+            "5-Ajoutez des vehicules.                     6-afficher la liste des vehicules.          7-Vérifier la disponibilté d'une véhicule\n"
+            +"8-afficher les vehicules réservés par un client.    9-afficher les clients qui réservent un véhicule\n"+
+            "10-Demande location                         11-afficher la liste des locations          13-afficher détails d'une location\n"+
+            "12-ajouter_facture                          14-afficher liste des factures");
              x = sc.nextInt();
              System.out.println("");
 
@@ -148,7 +151,6 @@ public class Prog_principale {
                System.out.println("Entrez l'id du client");
                int r=sc.nextInt();
                int in= Client.Recherche_client(r);
-
                Client.aff_vehicules(Client.clients.get(in));
             break;
             case 9:

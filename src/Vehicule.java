@@ -110,11 +110,7 @@ public class Vehicule {
             System.out.println("Entrer l'id de l'agent responsable");
             int p=sc.nextInt();
             int rech=Agent.Recherche_Ag(p);
-            System.out.println("Entrer l'id du client");
-            int t=sc.nextInt();
-            int o=Client.Recherche_client(t);
-            v.clients.add(Client.clients.get(o));
-
+            
             if (rech==-1)
             {
                 System.out.println("il n'existe pas un agent qui a un id "+p);

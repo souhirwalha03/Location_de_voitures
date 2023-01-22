@@ -7,15 +7,15 @@ public class Prog_principale {
       System.out.println();
      //Clients
          //nouveau client
-         Client client1 = new Client(123456,"emna", "mmmm");
+         Client client1 = new Client(11111,"a1", "b1");
          //ajouter le client a la liste des clients
          Client.clients.add(client1);
          //afficher details du client1
          System.out.println("information du client ajoutée ");
          System.out.println(client1.toString()); 
          //meme pour client2 et client3
-         Client client2 = new Client(253859,"leila", "pppp");
-         Client client3 = new Client(253564,"adem", "DDDDD");
+         Client client2 = new Client(12222,"a2", "b2");
+         Client client3 = new Client(13333,"a3", "b3");
          Client.clients.add(client2);
          Client.clients.add(client3);
          System.out.println();
@@ -23,7 +23,7 @@ public class Prog_principale {
 
      //Agents
          //nouveau agent
-         Agent Ag1 = new Agent(124658,"aaa", "bbb");
+         Agent Ag1 = new Agent(21111,"c1", "d1");
          //ajouter a la liste des agents
          Agent.Agents.add(Ag1);
          //afficher details du Ag1
@@ -31,8 +31,8 @@ public class Prog_principale {
          System.out.println(Ag1.toString()); 
 
          //meme pour Ag2 et Ag3
-         Agent Ag2 = new Agent(365685,"ccc", "dd");
-         Agent Ag3 = new Agent(561225,"ee", "ff");
+         Agent Ag2 = new Agent(22222,"c2", "d2");
+         Agent Ag3 = new Agent(23333,"c3", "d3");
          Agent.Agents.add(Ag2);
          Agent.Agents.add(Ag3);
          System.out.println();
@@ -66,19 +66,13 @@ public class Prog_principale {
 
         //factures
         //nouvelle facture
-        Facture f1 = new Facture(124658,"11/02/2001",50000, Ag1);
+       Facture f1 = new Facture(124658,"11/02/2001",50000, Ag1);
         //ajouter a la liste des agents
         Facture.factures.add(f1);
         //afficher details du f1
         System.out.println("information de la facture ajoutée ");
         System.out.println(f1.toString()); 
 
-        //meme pour f2 et f3
-        Facture f2 = new Facture(365685,"8/3/2023",20000, Ag2);
-        Facture f3 = new Facture(561225,"5/6/2001",30000, Ag1);
-        Facture.factures.add(f2);
-        Facture.factures.add(f3);
-        System.out.println();
         System.out.println();
 
    

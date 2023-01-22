@@ -6,6 +6,8 @@ public class Location {
     public String dateDebut ;
     public int duree;
     public float prix_journalie_convenu;
+    public static ArrayList<Location> Locations = new ArrayList<Location>();
+    public static int  nombrelocations ;
 
     private Client client;
     private Vehicule vehicule;
@@ -25,10 +27,16 @@ public class Location {
          this.client=client ;
     }
     //constrcuteur
-    public Location(Client client, Vehicule vehicule, int duree){
+    public Location(Client client, Vehicule vehicule, int duree,float prix_journalie_convenu){
     this.client=client;
     this.vehicule=vehicule;
     this.duree=duree;
+    this.prix_journalie_convenu=prix_journalie_convenu;
+    nombrelocations++;
+
+    }
+
+    public Location(){nombrelocations++;
     }
     
     //Demande de location
@@ -55,9 +63,18 @@ public class Location {
                     {
                         if ( Vehicule.vehicules.get(index).getDispo() == 1 ) 
                             {   
+                                Location l = new Location() ;
                                 Client.clients.get(i).vehicules.add(Vehicule.vehicules.get(index));
                                 Vehicule.vehicules.get(index).clients.add(Client.clients.get(i)); 
-
+                                System.out.println("entrez la durée de location");
+                                int a = sc.nextInt();
+                                l.duree=a;
+                                System.out.println("entrez la date de location (jj/mm/aaaa)");
+                                String b = sc.next();
+                                l.dateDebut=b;
+                                nombrelocations++;
+                                Location.Locations.add(l);
+                                
                             }
                         else if (Vehicule.vehicules.get(index).getDispo() == 0 )
                         {          

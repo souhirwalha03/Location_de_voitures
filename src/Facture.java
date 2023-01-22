@@ -7,17 +7,16 @@ public class Facture {
        private String datefac ;
        public static ArrayList<Facture> factures = new ArrayList<Facture>();
           public static int  nombreFactures ;
-          public static int prix_journalie_convenu;
 
 //association
      private Agent agent;
     
 // constructeur 
-     public Facture(int idfac , String datefac , int prix_journalie_convenu , Agent agent){
+     public Facture(int idfac , String datefac , int prix_journalie_convenu , Agent agent,Location l){
         this.idfac=idfac;
         this.datefac=datefac;
         this.agent=agent;
-        this.prix_journalie_convenu=prix_journalie_convenu;
+        l.prix_journalie_convenu=prix_journalie_convenu;
         nombreFactures++;
 
      }
@@ -54,14 +53,7 @@ public class Facture {
           return "id:"+this.idfac+" | Date : " + this.getDatefac()+ " | affectuée par : " + this.agent.getidAgent() ;
      }
     
-
-       
-      ///methode de calcul du montant
-      
-      public static double Calcul_montant(Location L){
-          return L.duree*L.prix_journalie_convenu; 
-     }
-
+//ajouter facture 
      public static void  ajouter_facture(){
           Scanner sc =new Scanner(System.in);
               Facture f=new Facture();
@@ -96,6 +88,11 @@ public class Facture {
      }
 }
 
-//calcule montant
+///methode de calcul du montant
+      
+public static double Calcul_montant(Location L){
+     return L.duree*L.prix_journalie_convenu; 
+}
+
      
 }

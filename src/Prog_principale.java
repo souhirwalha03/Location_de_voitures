@@ -56,9 +56,21 @@ public class Prog_principale {
         Vehicule.vehicules.add(vehicule2);
         Vehicule.vehicules.add(vehicule3);
 
+        //location 
+        Location l3 = new Location();
+        Location l1 = new Location();
+        Location l2 = new Location();
+        Location l4 = new Location(client2,vehicule1,2,45000);
+        Location.Locations.add(l1);
+        Location.Locations.add(l2);
+        Location.Locations.add(l3);
+        Location.Locations.add(l4);
+        System.out.println();
+        System.out.println();
+
         //factures
         //nouvelle facture
-        Facture f1 = new Facture(124658,"11/02/2001",50000, Ag1);
+        Facture f1 = new Facture(124658,"11/02/2001",50000, Ag1, l1);
         //ajouter a la liste des agents
         Facture.factures.add(f1);
         //afficher details du f1
@@ -66,12 +78,14 @@ public class Prog_principale {
         System.out.println(f1.toString()); 
 
         //meme pour f2 et f3
-        Facture f2 = new Facture(365685,"8/3/2023",50000, Ag2);
-        Facture f3 = new Facture(561225,"5/6/2001",50000, Ag1);
+        Facture f2 = new Facture(365685,"8/3/2023",50000, Ag2,l2);
+        Facture f3 = new Facture(561225,"5/6/2001",50000, Ag1,l3);
         Facture.factures.add(f2);
         Facture.factures.add(f3);
         System.out.println();
         System.out.println();
+
+        
         
 
         int x;
@@ -82,7 +96,7 @@ public class Prog_principale {
             "3-Ajoutez un nouveau agent.\n4-afficher la liste des agents.\n"+
             "5-Ajoutez des vehicules.\n6-afficher la liste des vehicules.\n7-Vérifier la disponibilté d'une véhicule\n"
             +"8-afficher les vehicules réservés par un client.\n9-afficher les clients qui réservent un véhicule\n10-Demande location"
-            +"11-exit");
+            +"11-ajouter_facture\n12-afficher_factures\n13-");
              x = sc.nextInt();
              System.out.println("");
 

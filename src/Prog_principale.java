@@ -83,10 +83,13 @@ public class Prog_principale {
 
         Location l1 = new Location(client1,vehicule1,2,"8/3/2023");
         Location.Locations.add(l1);
+        Location.demande_location(Client.clients.indexOf(client1),Vehicule.vehicules.indexOf(vehicule1),2,"8/3/2023");
         Location l2 = new Location(client1,vehicule2,2,"9/3/2023");
         Location.Locations.add(l2);
+        Location.demande_location(Client.clients.indexOf(client1),Vehicule.vehicules.indexOf(vehicule2),2,"9/3/2023");
         Location l3 = new Location(client3,vehicule1,2,"10/3/2023");
         Location.Locations.add(l3);
+        Location.demande_location(Client.clients.indexOf(client3),Vehicule.vehicules.indexOf(vehicule1),2,"10/3/2023");
 
        
         

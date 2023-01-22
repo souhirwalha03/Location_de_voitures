@@ -92,6 +92,48 @@ public class Location {
 
         }
 
+
+
+
+        public static void demande_location(int c,int choix, int a, String b){
+            
+           int i=Client.Recherche_client(c);
+    
+           if (i==-1){
+                System.out.println("you have to register first");
+            }
+           else {   int index=Vehicule.Recherche_voiture(choix);
+    
+                    if (index == -1){
+                        System.out.println("wrong id ");}
+                        else 
+                        {
+                            if ( Vehicule.vehicules.get(index).getDispo() == 1 ) 
+                                {   
+                                    Location l = new Location() ;
+                                    l.client = Client.clients.get(i);
+                                    l.vehicule = Vehicule.vehicules.get(index);
+                                    l.duree=a;
+                                    l.dateDebut=b;
+    
+                                    Location.Locations.add(l);
+                                    
+                                    Vehicule.vehicules.get(index).clients.add(Client.clients.get(i)); 
+                                    Client.clients.get(i).vehicules.add(Vehicule.vehicules.get(index));
+                                
+                                    
+                                }
+                            else if (Vehicule.vehicules.get(index).getDispo() == 0 )
+                            {          
+                                    System.out.println("La voiture d'id : "+Vehicule.vehicules.get(index).getIdVehicule()+" est déjà louée");
+                            }
+                            
+                        }
+                
+                }
+    
+            }
+
         public  static void afficher_locations (){
        
             for (int i=0;i<nombrelocations;i++){ 

@@ -51,7 +51,6 @@ public class Prog_principale {
         //disponibilité de la vehicule vehicule1
         Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule1));
 
-        ///System.out.println("Entrer l'id du client");
         vehicule1.clients.add(client1);
         vehicule1.clients.add(client3);
 
@@ -154,25 +153,29 @@ public class Prog_principale {
                
             break;
             case 10:
-               Location.demande_location();
+            Location l0= new Location();
+
+               l0.demande_location();
 
             break;
             case 11:
-               Location.afficher_locations();
+            Location l1= new Location();
+               l1.afficher_locations();
             break;
             case 12:
                Facture.ajouter_facture();
             break;
             case 13:
+            Location l2= new Location();
                System.out.println("Entrez l'id du client qui a effectué la location");
                int idc=sc.nextInt();
                System.out.println("Entrez l'id de la voiture louée");
                int idv=sc.nextInt();
-               int it=Location.Recherche_location(idc,idv);
+               int it=l2.Recherche_location(idc,idv);
                if (it==-1)
                   System.out.println("");
                   else
-                  Location.afficher_loc(it);
+                  l2.afficher_une_location(it);
             break;
             case 14:
             Facture.afficher_facture();

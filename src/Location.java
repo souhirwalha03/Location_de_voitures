@@ -1,7 +1,6 @@
 import java.util.*;
-public class Location {
+public class Location implements Operation {
 
-    
     
     public String dateDebut ;
     public int duree;
@@ -35,12 +34,10 @@ public class Location {
 
     }
 
-    public Location(){nombrelocations++;
-        
-    }
+    public Location(){}
     
     //Demande de location
-    public static void demande_location(){
+    public  void demande_location(){
         Scanner sc = new Scanner(System.in);
        System.out.println("Entrez votre id");
        int c = sc.nextInt();
@@ -64,6 +61,7 @@ public class Location {
                         if ( Vehicule.vehicules.get(index).getDispo() == 1 ) 
                             {   
                                 Location l = new Location() ;
+                                nombrelocations++;
                                 l.client = Client.clients.get(i);
                                 l.vehicule = Vehicule.vehicules.get(index);
                                 System.out.println("entrez la durée de location");
@@ -75,6 +73,7 @@ public class Location {
                                 l.dateDebut=b;
 
                                 Location.Locations.add(l);
+
                                 
                                 Vehicule.vehicules.get(index).clients.add(Client.clients.get(i)); 
                                 Client.clients.get(i).vehicules.add(Vehicule.vehicules.get(index));
@@ -92,49 +91,7 @@ public class Location {
 
         }
 
-
-
-
-        public static void demande_location(int c,int choix, int a, String b){
-            
-           int i=Client.Recherche_client(c);
-    
-           if (i==-1){
-                System.out.println("you have to register first");
-            }
-           else {   int index=Vehicule.Recherche_voiture(choix);
-    
-                    if (index == -1){
-                        System.out.println("wrong id ");}
-                        else 
-                        {
-                            if ( Vehicule.vehicules.get(index).getDispo() == 1 ) 
-                                {   
-                                    Location l = new Location() ;
-                                    l.client = Client.clients.get(i);
-                                    l.vehicule = Vehicule.vehicules.get(index);
-                                    l.duree=a;
-                                    l.dateDebut=b;
-    
-                                    Location.Locations.add(l);
-                                    
-                                    Vehicule.vehicules.get(index).clients.add(Client.clients.get(i)); 
-                                    Client.clients.get(i).vehicules.add(Vehicule.vehicules.get(index));
-                                
-                                    
-                                }
-                            else if (Vehicule.vehicules.get(index).getDispo() == 0 )
-                            {          
-                                    System.out.println("La voiture d'id : "+Vehicule.vehicules.get(index).getIdVehicule()+" est déjà louée");
-                            }
-                            
-                        }
-                
-                }
-    
-            }
-
-        public  static void afficher_locations (){
+        public   void afficher_locations (){
             if(Location.Locations.isEmpty() == true )
             System.out.println("aucun location");
             else{
@@ -148,7 +105,7 @@ public class Location {
             }}
     }
 
-    public static int Recherche_location (int idc ,int idv) {
+    public  int Recherche_location (int idc ,int idv) {
 
         int v=-1;
         
@@ -167,7 +124,7 @@ public class Location {
          return v ;
         }
 
-        public  static void afficher_loc (int  i){
+        public  void afficher_une_location (int  i){
        
         {
             if(Location.Locations.isEmpty() == true )

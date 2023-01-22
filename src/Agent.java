@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Agent extends Utilisateur {
 
-    private int id_agent;
+    public int id_agent;
     public static ArrayList<Agent> Agents = new ArrayList<Agent>();
     public static int nombreAgents;
 
@@ -18,36 +18,28 @@ public class Agent extends Utilisateur {
         super(nom, prenom);
         this.id_agent=id_agent;
         this.vehicules = new ArrayList<>();
-        //vehicules = new  ArrayList<Contrat>();
-        //factures = new  ArrayList<Facture>();
         nombreAgents ++;
     }
+
     public Agent () {
         nombreAgents++;
     }
 
     
-//get
+//getters
     public int getidAgent (){
         return this.id_agent;
     }
-    public ArrayList <Facture> getFacture() {
-        return factures;
-    }
 
-//set
+//setters
     public void setidAgent (int id_agent){
         this.id_agent = id_agent;
-    }
-    public void setFacture (ArrayList <Facture> factures){
-        this.factures = factures;
     }
 
 //toString
 public String toString(){
          
-    return "Id:"+ this.id_agent + " | Nom:"+ this.getNom()
-     +" | Prenom:"+ this.getPrenom()  ;
+    return "Id:"+ this.id_agent + " | Nom:"+ this.getNom()+" | Prenom:"+ this.getPrenom()  ;
 }
 
 

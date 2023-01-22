@@ -9,12 +9,13 @@ public class Vehicule {
     private int dispo; 
     public static int nombreVehicules;
     public static ArrayList<Vehicule> vehicules = new ArrayList<Vehicule>();
+    public int prix;
 //associations
     public  ArrayList <Client> clients;
     private Agent agent;
     
 //constructeur
-    public Vehicule(int idVehicule, int kilometrage , String marque , int dispo,Agent agent)
+    public Vehicule(int idVehicule, int kilometrage , String marque , int dispo,Agent agent,int prix)
     {
         this.idVehicule=idVehicule;
         this.kilometrage=kilometrage;
@@ -23,6 +24,7 @@ public class Vehicule {
         this.agent=agent;
         nombreVehicules ++; 
         this.clients = new ArrayList<>();
+        this.prix=prix;
  
 
     }

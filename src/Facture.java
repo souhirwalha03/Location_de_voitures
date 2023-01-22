@@ -6,19 +6,18 @@ public class Facture {
        private int idfac ;
        private String datefac ;
        public static ArrayList<Facture> factures = new ArrayList<Facture>();
-          public static int  nombreFactures ;
-
+     public static int  nombreFactures ;
+        
 //association
      private Agent agent;
     
 // constructeur 
-     public Facture(int idfac , String datefac , int prix_journalie_convenu , Agent agent,Location l){
+     public Facture(int idfac , String datefac , int prix_journalie_convenu , Agent agent){
         this.idfac=idfac;
         this.datefac=datefac;
         this.agent=agent;
-        l.prix_journalie_convenu=prix_journalie_convenu;
         nombreFactures++;
-
+         
      }
      public Facture(){
           nombreFactures++;
@@ -76,23 +75,49 @@ public class Facture {
           
       }
 
+      
+
       ///methode d'affichage de la liste des Factures
-    public static void afficher_factures (){
-       
-     for (int i=0;i<nombreFactures;i++){ 
-         if (i==0){
-             System.out.println("La liste des factures:");
-         }
-         System.out.println( "id:"+Facture.factures.get(i).idfac+" | Date : " + Facture.factures.get(i).getDatefac()+ " | affectuée par : " + Facture.factures.get(i).getagent() );
-         
+    public static void afficher_facture (){
+     Scanner sc =new Scanner(System.in);
+
+     //System.out.println("Entrez l'id du client qui a effectué la location");
+     //int d1=sc.nextInt();
+     //System.out.println("Entrez l'id de la voiture louée");
+       //   int d=sc.nextInt();
+       for (int j=0; j<Location.nombrelocations;j++){ 
+          for (int i=0; i<nombreFactures;i++){ 
+
+               //int k=Location.Recherche_location(Location.Locations.get(j).client.getIdClient(),Location.Locations.get(j).vehicule.getIdVehicule());
+               
+               ////if (k==-1)
+              // System.out.println("erreur");
+                    //else
+                    { float x = Facture.Calcul_montant(Location.Locations.get(j));
+                    
+                              //if (Location.Locations.get(k).getclient().getIdClient()==d1 && Location.Locations.get(k).getVehiculet().getIdVehicule()==d)
+                                   System.out.println( "id facture:"+Facture.factures.get(i).idfac+" | Date de facture : " + Facture.factures.get(i).getDatefac()+
+                                   "\n | Date début de location : " +Location.Locations.get(j).dateDebut+" | id client: "
+                                   +Location.Locations.get(j).client.getIdClient()+" | id vehicule: "
+                                   +Location.Locations.get(j).vehicule.getIdVehicule()+
+                                    "\n| affectuée par l'agent : " + Facture.factures.get(i).getagent()+" |\n Montant totale : " + x  );
+                                    System.out.println();
+                         }
+                         
+                    }
+               
+          
      }
 }
 
+
 ///methode de calcul du montant
-      
-public static double Calcul_montant(Location L){
-     return L.duree*L.prix_journalie_convenu; 
+public static  float Calcul_montant(Location L){
+
+     return L.duree*L.vehicule.prix; 
 }
+
+
 
      
 }

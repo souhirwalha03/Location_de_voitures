@@ -5,12 +5,11 @@ public class Location {
     
     public String dateDebut ;
     public int duree;
-    public float prix_journalie_convenu;
     public static ArrayList<Location> Locations = new ArrayList<Location>();
     public static int  nombrelocations ;
 
-    private Client client;
-    private Vehicule vehicule;
+    public Client client;
+    public Vehicule vehicule;
 
 
     public Vehicule getVehiculet(){
@@ -27,16 +26,17 @@ public class Location {
          this.client=client ;
     }
     //constrcuteur
-    public Location(Client client, Vehicule vehicule, int duree,float prix_journalie_convenu){
+    public Location(Client client, Vehicule vehicule, int duree, String dateDebut){
     this.client=client;
     this.vehicule=vehicule;
     this.duree=duree;
-    this.prix_journalie_convenu=prix_journalie_convenu;
     nombrelocations++;
+    this.dateDebut=dateDebut;
 
     }
 
     public Location(){nombrelocations++;
+        
     }
     
     //Demande de location
@@ -86,5 +86,47 @@ public class Location {
             }
 
         }
+
+        public  static void afficher_locations (){
+       
+            for (int i=0;i<nombrelocations;i++){ 
+                if (i==0){
+                    System.out.println("La liste des locations:");
+                }
+                System.out.println( "client id :"+Location.Locations.get(i).client.getIdClient()+" | véhicule id : " 
+                + Location.Locations.get(i).vehicule.getIdVehicule()+ " | Date début: " + Location.Locations.get(i).dateDebut
+                +" | Durée: " + Location.Locations.get(i).duree);
+            }
+    }
+
+    public static int Recherche_location (int idc ,int idv) {
+
+        int v=-1;
+        
+        
+                for (int i=0;i<nombrelocations;i++){
+                    if ( Location.Locations.get(i).client.getIdClient() == idc && Location.Locations.get(i).vehicule.getIdVehicule() == idv)
+                    {
+                            v = Locations.indexOf(Location.Locations.get(i));
+                    }
+                    
+                }
+                if (v==-1)
+                System.out.println("Location n'est pas trouvée");
+        
+        
+         return v ;
+        }
+
+        public  static void afficher_loc (int  i){
+       
+        {
+                System.out.println( "client id :"+Location.Locations.get(i).client.getIdClient()+" | véhicule id : " 
+                + Location.Locations.get(i).vehicule.getIdVehicule()+ " | Date début: " + Location.Locations.get(i).dateDebut
+                +" | Durée: " + Location.Locations.get(i).duree);
+            }
+    }
+
+        
     }
 

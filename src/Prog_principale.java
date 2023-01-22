@@ -41,7 +41,7 @@ public class Prog_principale {
 
      //Vehicules
         //nouveau vehicule
-        Vehicule vehicule1 = new Vehicule(85889, 1000, "Polo" , 0, Ag1);
+        Vehicule vehicule1 = new Vehicule(85889, 1000, "Polo" , 0, Ag1,40000);
         //ajouter a la liste des vehicules
         Vehicule.vehicules.add(vehicule1);
         //afficher details de la vehicules vehicule1 
@@ -51,26 +51,16 @@ public class Prog_principale {
         Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule1));
 
         //meme pour vehicule2 et vehicule3
-        Vehicule vehicule2 = new Vehicule(85899, 1100, "Fiat" , 1, Ag1);
-        Vehicule vehicule3 = new Vehicule(85000, 1500, "Mercedes" , 1, Ag2);
+        Vehicule vehicule2 = new Vehicule(85899, 1100, "Fiat" , 1, Ag1,70000);
+        Vehicule vehicule3 = new Vehicule(85000, 1500, "Mercedes" , 1, Ag2,60000);
         Vehicule.vehicules.add(vehicule2);
         Vehicule.vehicules.add(vehicule3);
 
-        //location 
-        Location l3 = new Location();
-        Location l1 = new Location();
-        Location l2 = new Location();
-        Location l4 = new Location(client2,vehicule1,2,45000);
-        Location.Locations.add(l1);
-        Location.Locations.add(l2);
-        Location.Locations.add(l3);
-        Location.Locations.add(l4);
-        System.out.println();
-        System.out.println();
+        
 
         //factures
         //nouvelle facture
-        Facture f1 = new Facture(124658,"11/02/2001",50000, Ag1, l1);
+        Facture f1 = new Facture(124658,"11/02/2001",50000, Ag1);
         //ajouter a la liste des agents
         Facture.factures.add(f1);
         //afficher details du f1
@@ -78,13 +68,21 @@ public class Prog_principale {
         System.out.println(f1.toString()); 
 
         //meme pour f2 et f3
-        Facture f2 = new Facture(365685,"8/3/2023",50000, Ag2,l2);
-        Facture f3 = new Facture(561225,"5/6/2001",50000, Ag1,l3);
+        Facture f2 = new Facture(365685,"8/3/2023",20000, Ag2);
+        Facture f3 = new Facture(561225,"5/6/2001",30000, Ag1);
         Facture.factures.add(f2);
         Facture.factures.add(f3);
         System.out.println();
         System.out.println();
 
+        Location l1 = new Location(client1,vehicule1,2,"8/3/2023");
+        Location.Locations.add(l1);
+        Location l2 = new Location(client1,vehicule2,2,"9/3/2023");
+        Location.Locations.add(l2);
+        Location l3 = new Location(client3,vehicule1,2,"10/3/2023");
+        Location.Locations.add(l3);
+
+       
         
         
 
@@ -95,8 +93,9 @@ public class Prog_principale {
             System.out.println( "1-Ajoutez un nouveau client.\n2-afficher la liste des clients.\n"+ 
             "3-Ajoutez un nouveau agent.\n4-afficher la liste des agents.\n"+
             "5-Ajoutez des vehicules.\n6-afficher la liste des vehicules.\n7-Vérifier la disponibilté d'une véhicule\n"
-            +"8-afficher les vehicules réservés par un client.\n9-afficher les clients qui réservent un véhicule\n10-Demande location"
-            +"11-ajouter_facture\n12-afficher_factures\n13-");
+            +"8-afficher les vehicules réservés par un client.\n9-afficher les clients qui réservent un véhicule\n10-Demande location\n"
+            +"11-afficher la liste des locations\n12-ajouter_facture\n13-afficher détails d'une location\n"+
+            "14-afficher liste des factures");
              x = sc.nextInt();
              System.out.println("");
 
@@ -156,12 +155,32 @@ public class Prog_principale {
 
             break;
             case 11:
+               Location.afficher_locations();
+            break;
+            case 12:
+               Facture.ajouter_facture();
+            break;
+            case 13:
+               System.out.println("Entrez l'id du client qui a effectué la location");
+               int idc=sc.nextInt();
+               System.out.println("Entrez l'id de la voiture louée");
+               int idv=sc.nextInt();
+               int it=Location.Recherche_location(idc,idv);
+               if (it==-1)
+                  System.out.println("");
+                  else
+                  Location.afficher_loc(it);
+            break;
+            case 14:
+            Facture.afficher_facture();
+            break;
+            case 15:
 
             break;
 
          } 
 
-   }while (x !=11);
+   }while (x !=15);
       
     
     }

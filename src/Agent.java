@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Agent extends Utilisateur {
 
-    public int id_agent;
+    private int id_agent;
     public static ArrayList<Agent> Agents = new ArrayList<Agent>();
     public static int nombreAgents;
 
@@ -50,23 +50,20 @@ public static void  ajouter_agent(){
 
         System.out.println("id:");
         ag.setidAgent(sc.nextInt()); 
-        System.out.println("Nom");
+        System.out.println("Nom:");
         ag.setNom(sc.next());
-        System.out.println("Prenom");
+        System.out.println("Prénom:");
         ag.setPrenom(sc.next());
         
         Agent.Agents.add(ag);
     
 }
 
-
-
-
  //methode afficher liste des agents
     public static void affAgents (){
         for (int i=0;i<nombreAgents;i++){
             { if (i==0){
-                System.out.println("La liste des Agents:");
+                System.out.println("La liste des Agents :");
                 }
              System.out.println( "id:"+Agent.Agents.get(i).id_agent+" | Nom: " + Agent.Agents.get(i).getNom()+ " | Prénom: "+ Agent.Agents.get(i).getPrenom());
             }

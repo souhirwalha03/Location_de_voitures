@@ -90,7 +90,7 @@ public class Prog_principale {
             "1-Ajoutez un nouveau client.                 2-afficher la liste des clients.\n"+ 
             "3-Ajoutez un nouveau agent.                  4-afficher la liste des agents.\n"+
             "5-Ajoutez des vehicules.                     6-afficher la liste des vehicules.          7-Vérifier la disponibilté d'une véhicule\n"
-            +"8-afficher les vehicules réservés par un client.    9-afficher les clients qui réservent un véhicule\n"+
+            +"8-afficher les vehicules réservés par un client.    9-afficher les clients qui ont réservées une voiture\n"+
             "10-Demande location                         11-afficher la liste des locations          13-afficher détails d'une location\n"+
             "12-ajouter_facture                          14-afficher liste des factures");
              x = sc.nextInt();

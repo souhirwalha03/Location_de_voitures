@@ -8,11 +8,7 @@ public class Client extends Utilisateur {
 
 
 //associations
-    
     public  ArrayList <Vehicule> vehicules;
-
-
-
 //constructeur
     public Client (int id_client,String nom, String prenom){
         super(nom, prenom);
@@ -22,7 +18,8 @@ public class Client extends Utilisateur {
 
     }
 
-    public Client () {nombreClients ++;
+    public Client () {
+        nombreClients ++;
         this.vehicules = new ArrayList<>();
     }
 
@@ -49,8 +46,7 @@ public class Client extends Utilisateur {
 
 public String toString(){
          
-    return "Id:"+ this.id_client + " | Nom:"+ this.getNom()
-     +" | Prenom:"+ this.getPrenom()  ;
+    return "Id:"+ this.id_client + " | Nom:"+ this.getNom()+" | Prenom:"+ this.getPrenom()  ;
 }
 
 //methode ajouter un client
@@ -60,9 +56,9 @@ public static void  ajouter_client(){
 
     System.out.println("id:");
     cl.setIdClient(sc.nextInt()); 
-    System.out.println("Nom");
+    System.out.println("Nom:");
     cl.setNom(sc.next());
-    System.out.println("Prenom");
+    System.out.println("Prenom:");
     cl.setPrenom(sc.next());
     
     Client.clients.add(cl);
@@ -103,14 +99,14 @@ public static int Recherche_client (int id) {
 
 //afficher la liste des vehicules reservée par un client
 public static void aff_vehicules(Client c ){
-    
+
     if (c.vehicules.size()==0)
-        System.out.println("aucune réservation ");
+        System.out.println("aucune réservation touvée ");
         else {
             for (int i=0;i<c.vehicules.size();i++){
                 { 
                     if (i==0){
-                        System.out.println("La liste des vehicules reservée par ce client:");
+                        System.out.println("La liste des véhicules reservées par ce client:");
                     }
                     System.out.println( "id:"+c.vehicules.get(i).getIdVehicule()+" | De kilometrage: " + c.vehicules.get(i).getKilometrage()+ " | De marque: " + c.vehicules.get(i).getMarque());
 

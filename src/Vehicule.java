@@ -29,7 +29,9 @@ public class Vehicule {
 
     }
 
-    public Vehicule(){nombreVehicules++;}
+    public Vehicule(){
+        nombreVehicules++;
+    }
    
 
 // getters   
@@ -94,14 +96,14 @@ public class Vehicule {
 //ajouer
     public static void  ajouter_vehicule(){
         Scanner sc =new Scanner(System.in);
-        System.out.println("Donner le nombre de vehicules a ajouter");
+        System.out.println("Donner le nombre de véhicules a ajouter");
         int nombre = sc.nextInt();
         
         for ( int i=1 ; i<nombre+1 ; i++) {
             Vehicule v=new Vehicule();
             System.out.println("Entrer l'id de la véhicule" + i);
             v.setIdVehicule(sc.nextInt()); 
-            System.out.println("Entrer la marque");
+            System.out.println("Entrer la marque de la véhicule");
             v.setMarque(sc.next());
             System.out.println("Entrer le kilométrage de la véhicule");
             v.setKilometrage(sc.nextInt());
@@ -110,14 +112,13 @@ public class Vehicule {
             System.out.println("Entrer l'id de l'agent responsable");
             int p=sc.nextInt();
             int rech=Agent.Recherche_Ag(p);
-            
-            if (rech==-1)
-            {
+            do{
+                System.out.println("Entrer l'id de l'agent responsable");
+                 p=sc.nextInt();
+                 rech=Agent.Recherche_Ag(p);
                 System.out.println("il n'existe pas un agent qui a un id "+p);
-            }
-            else 
                 v.setagent(Agent.Agents.get(rech));
-
+                }while (rech==-1);
             Vehicule.vehicules.add(v);
         }
     }
@@ -137,7 +138,7 @@ public class Vehicule {
     public static void EstDisponible(int index){
     
         if (index == -1){
-            System.out.println("id not found");}
+            System.out.println("wrong id");}
             else 
             {
                 if ( Vehicule.vehicules.get(index).getDispo() == 1 ) 
@@ -177,13 +178,13 @@ int v=-1;
 
 public static void aff_clients(Vehicule v){
     if (v.clients.size()==0){
-        System.out.println("aucune réservation");
+        System.out.println("aucune réservation trouvée");
 
     }else {
     for (int i=0;i<v.clients.size();i++){
         { 
             if (i==0){
-                System.out.println("La liste des clients qui reservent ce voiture:");
+                System.out.println("La liste des clients qui ont reservées cette voiture:");
             }
             System.out.println( "id:"+v.clients.get(i).getIdClient()+" | Nom : " + v.clients.get(i).getNom()+ " | Prénom: " + v.clients.get(i).getPrenom());
 

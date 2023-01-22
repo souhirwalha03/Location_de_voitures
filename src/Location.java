@@ -39,12 +39,12 @@ public class Location implements Operation {
     //Demande de location
     public  void demande_location(){
         Scanner sc = new Scanner(System.in);
-       System.out.println("Entrez votre id");
+       System.out.println("Entrez votre id: ");
        int c = sc.nextInt();
        int i=Client.Recherche_client(c);
 
        if (i==-1){
-            System.out.println("you have to register first");
+            System.out.println("vous devez vous inscrire d'abord ");
         }
        else {
 
@@ -64,11 +64,11 @@ public class Location implements Operation {
                                 nombrelocations++;
                                 l.client = Client.clients.get(i);
                                 l.vehicule = Vehicule.vehicules.get(index);
-                                System.out.println("entrez la durée de location");
+                                System.out.println("entrez la durée de la location");
                                 int a = sc.nextInt();
                                 l.duree=a;
 
-                                System.out.println("entrez la date de location (jj/mm/aaaa)");
+                                System.out.println("entrez la date de la location (jj/mm/aaaa)");
                                 String b = sc.next();
                                 l.dateDebut=b;
 
@@ -93,7 +93,7 @@ public class Location implements Operation {
 
         public   void afficher_locations (){
             if(Location.Locations.isEmpty() == true )
-            System.out.println("aucun location");
+            System.out.println("aucune location trouvée");
             else{
             for (int i=0;i<nombrelocations;i++){ 
                 if (i==0){
@@ -118,7 +118,7 @@ public class Location implements Operation {
                     
                 }
                 if (v==-1)
-                System.out.println("Location n'est pas trouvée");
+                System.out.println("Location n'est pas trouvé");
         
         
          return v ;
@@ -128,7 +128,7 @@ public class Location implements Operation {
        
         {
             if(Location.Locations.isEmpty() == true )
-            System.out.println("aucun location");
+            System.out.println("aucune location trouvée");
             else{
                 System.out.println( "client id :"+Location.Locations.get(i).client.getIdClient()+" | véhicule id : " 
                 + Location.Locations.get(i).vehicule.getIdVehicule()+ " | Date début: " + Location.Locations.get(i).dateDebut

@@ -25,25 +25,49 @@ public class Location {
          this.client=client ;
     }
     //constrcuteur
-public Location(Client client, Vehicule vehicule, int duree, float prix_journalie_convenu){
-this.client=client;
-this.vehicule=vehicule;
-this.duree=duree;
-this.prix_journalie_convenu=prix_journalie_convenu;
-}
+    public Location(Client client, Vehicule vehicule, int duree){
+    this.client=client;
+    this.vehicule=vehicule;
+    this.duree=duree;
+    }
     
     //Demande de location
-    //public static void demande(){
-       // System.out.println("Entrer l'id de la voiture que vous voulez louer");
-      //  Vehicule.afficher_vehicules(Vehicule.vehicules);
-        //Scanner sc = new Scanner(System.in);
-            //int choix = sc.nextInt();
-      // if choix.chercher().dispo==0{
-        //la voiture est louée : Exception}
-       // else{
-        //modifier dispo vehicule à 1
-      //  }
+    public static void demande_location(){
+        Scanner sc = new Scanner(System.in);
+       System.out.println("Entrez votre id");
+       int c = sc.nextInt();
+       int i=Client.Recherche_client(c);
 
-       //}
+       if (i==-1){
+            System.out.println("you have to register first");
+        }
+       else {
+
+                System.out.println("Entrez l'id de la voiture que vous voulez louer");
+                Vehicule.afficher_vehicules();
+                
+                int choix = sc.nextInt();
+                int index=Vehicule.Recherche_voiture(choix);
+
+                if (index == -1){
+                    System.out.println("id not found");}
+                    else 
+                    {
+                        if ( Vehicule.vehicules.get(index).getDispo() == 1 ) 
+                            {   
+                                Client.clients.get(i).vehicules.add(Vehicule.vehicules.get(index));
+                                Vehicule.vehicules.get(index).clients.add(Client.clients.get(i)); 
+
+                            }
+                        else if (Vehicule.vehicules.get(index).getDispo() == 0 )
+                        {          
+                                System.out.println("La voiture d'id : "+Vehicule.vehicules.get(index).getIdVehicule()+" est déjà louée");
+                        }
+                        
+                    }
+            
+            }
+
+        }
     }
 

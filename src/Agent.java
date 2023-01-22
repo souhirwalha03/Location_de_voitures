@@ -17,8 +17,8 @@ public class Agent extends Utilisateur {
     public Agent (int id_agent,String nom, String prenom){
         super(nom, prenom);
         this.id_agent=id_agent;
-
-        //contrats = new  ArrayList<Contrat>();
+        this.vehicules = new ArrayList<>();
+        //vehicules = new  ArrayList<Contrat>();
         //factures = new  ArrayList<Facture>();
         nombreAgents ++;
     }
@@ -80,6 +80,27 @@ public static void  ajouter_agent(){
             }
         }
     }
+
+//recherche
+    public static int Recherche_Ag (int id) {
+
+        int v=-1;
+        int i=0;
+        
+        
+                while(i<nombreAgents) {
+                    if ( Agent.Agents.get(i).getidAgent() == id )
+                    {
+                            v = Agents.indexOf(Agent.Agents.get(i));
+                    }
+                    i++;
+                }
+                if (v==-1)
+                System.out.println("wrong id");
+        
+        
+         return v ;
+        }
 
 
 

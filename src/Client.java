@@ -9,7 +9,7 @@ public class Client extends Utilisateur {
 
 //associations
     
-    private ArrayList <Vehicule> vehicules;
+    public  ArrayList <Vehicule> vehicules;
 
 
 
@@ -18,9 +18,13 @@ public class Client extends Utilisateur {
         super(nom, prenom);
         this.id_client=id_client;
         nombreClients ++;
+        this.vehicules = new ArrayList<>();
+
     }
 
-    public Client () {nombreClients ++;}
+    public Client () {nombreClients ++;
+        this.vehicules = new ArrayList<>();
+    }
 
 //getter
     public int getIdClient (){
@@ -76,22 +80,46 @@ public static void affClients (ArrayList<Client> clients){
     }
 }
 
+//recherche
+public static int Recherche_client (int id) {
+
+    int v=-1;
+    int i=0;
+    
+    
+            while(i<nombreClients) {
+                if ( Client.clients.get(i).getIdClient() == id )
+                {
+                        v = clients.indexOf(Client.clients.get(i));
+                }
+                i++;
+            }
+            if (v==-1)
+            System.out.println("wrong id");
+    
+    
+     return v ;
+    }
+
+//afficher la liste des vehicules reservée par un client
+public static void aff_vehicules(Client c ){
+    if (c.vehicules.size()==0)
+        System.out.println("aucune réservation ");
+        else {
+            for (int i=0;i<c.vehicules.size();i++){
+                { 
+                    if (i==0){
+                        System.out.println("La liste des vehicules reservée par ce client:");
+                    }
+                    System.out.println( "id:"+c.vehicules.get(i).getIdVehicule()+" | De kilometrage: " + c.vehicules.get(i).getKilometrage()+ " | De marque: " + c.vehicules.get(i).getMarque());
+
+                }
+        }
+    }
 
 
-//affichage_liste_client
- //    public String afficher_client(){
-  //     return toString(getIdClient());
-
-  //  }
-
-
-//remove contrat
-
-//public void remove(Contrat c){
-//    contrats.remove(c);
-//}
-
-
+}
+    
 
 
     

@@ -4,19 +4,21 @@ import java.util.*;
 public class Prog_principale {
     public static void main(String[] args) {
 
+      System.out.println();
      //Clients
          //nouveau client
          Client client1 = new Client(123456,"emna", "mmmm");
          //ajouter le client a la liste des clients
          Client.clients.add(client1);
          //afficher details du client1
+         System.out.println("information du client ajoutée ");
          System.out.println(client1.toString()); 
          //meme pour client2 et client3
          Client client2 = new Client(253859,"leila", "pppp");
          Client client3 = new Client(253564,"adem", "DDDDD");
          Client.clients.add(client2);
          Client.clients.add(client3);
-         System.out.println("\n");
+         System.out.println();
 
 
      //Agents
@@ -25,43 +27,62 @@ public class Prog_principale {
          //ajouter a la liste des agents
          Agent.Agents.add(Ag1);
          //afficher details du Ag1
+         System.out.println("information de l'agent ajoutée ");
          System.out.println(Ag1.toString()); 
-         System.out.println("\n");
 
          //meme pour Ag2 et Ag3
          Agent Ag2 = new Agent(365685,"ccc", "dd");
          Agent Ag3 = new Agent(561225,"ee", "ff");
          Agent.Agents.add(Ag2);
          Agent.Agents.add(Ag3);
+         System.out.println();
+         System.out.println();
+
 
      //Vehicules
         //nouveau vehicule
-        Vehicule vehicule1 = new Vehicule(85889, 1000, "Polo" , 0, Ag3);
+        Vehicule vehicule1 = new Vehicule(85889, 1000, "Polo" , 0, Ag1);
         //ajouter a la liste des vehicules
         Vehicule.vehicules.add(vehicule1);
         //afficher details de la vehicules vehicule1 
+        System.out.println("information du vehicule ajoutée ");
         System.out.println(vehicule1.toString()); 
-        System.out.println("\n");
         //disponibilité de la vehicule vehicule1
         Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule1));
-        System.out.println("\n");
 
         //meme pour vehicule2 et vehicule3
-        Vehicule vehicule2 = new Vehicule(85899, 1100, "Fiat" , 0, Ag3);
-        Vehicule vehicule3 = new Vehicule(85000, 1500, "Mercedes" , 1, Ag3);
+        Vehicule vehicule2 = new Vehicule(85899, 1100, "Fiat" , 1, Ag1);
+        Vehicule vehicule3 = new Vehicule(85000, 1500, "Mercedes" , 1, Ag2);
         Vehicule.vehicules.add(vehicule2);
         Vehicule.vehicules.add(vehicule3);
-        Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule2));
-        Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule3));
 
-        System.out.println("");
+        //factures
+        //nouvelle facture
+        Facture f1 = new Facture(124658,"11/02/2001",50000, Ag1);
+        //ajouter a la liste des agents
+        Facture.factures.add(f1);
+        //afficher details du f1
+        System.out.println("information de l'agent ajoutée ");
+        System.out.println(f1.toString()); 
+
+        //meme pour f2 et f3
+        Facture f2 = new Facture(365685,"8/3/2023",50000, Ag2);
+        Facture f3 = new Facture(561225,"5/6/2001",50000, Ag1);
+        Facture.factures.add(f2);
+        Facture.factures.add(f3);
+        System.out.println();
+        System.out.println();
+        
+
         int x;
       do{
             Scanner sc =new Scanner(System.in);
             System.out.println("");
             System.out.println( "1-Ajoutez un nouveau client.\n2-afficher la liste des clients.\n"+ 
             "3-Ajoutez un nouveau agent.\n4-afficher la liste des agents.\n"+
-            "5-Ajoutez des vehicules.\n6-afficher la liste des vehicules.\n7-Vérifier la disponibilté d'une véhicule\n8-exit");
+            "5-Ajoutez des vehicules.\n6-afficher la liste des vehicules.\n7-Vérifier la disponibilté d'une véhicule\n"
+            +"8-afficher les vehicules réservés par un client.\n9-afficher les clients qui réservent un véhicule\n10-Demande location"
+            +"11-exit");
              x = sc.nextInt();
              System.out.println("");
 
@@ -96,31 +117,38 @@ public class Prog_principale {
                System.out.println();
                Vehicule.afficher_vehicules();
                int id=sc.nextInt();
-               int index=Vehicule.Recherche(id);
+               int index=Vehicule.Recherche_voiture(id);
                System.out.println();
                Vehicule.EstDisponible(index);
             
+            break;
+            case 8:
+               System.out.println("Entrez l'id du client");
+               int r=sc.nextInt();
+               int in= Client.Recherche_client(r);
+
+               Client.aff_vehicules(Client.clients.get(in));
+            break;
+            case 9:
+               System.out.println("Entrez l'id de la vehicule");
+               int p=sc.nextInt();
+               int n= Vehicule.Recherche_voiture(p);
+               Vehicule.aff_clients(Vehicule.vehicules.get(n));
 
                
             break;
-            case 8:
+            case 10:
+               Location.demande_location();
 
             break;
+            case 11:
+
+            break;
+
          } 
 
-   }while (x !=8);
-        //affichage de la liste des vehicules 
-        
+   }while (x !=11);
       
-     //Locations
-     
-        // Location location1=new Location(client1, vehicule1, 5, 170);
-        // Location location2=new Location(client1, vehicule2, 15, 180);
-       //System.out.println("Le montant à payer est: ");
-        //System.out.println(Facture.Calcul_montant(location1));
-        //System.out.println(Facture.Calcul_montant(location2));
-       
-        // System.out.println(vehicule2.toString());
     
     }
    }

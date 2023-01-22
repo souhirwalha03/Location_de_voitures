@@ -135,7 +135,9 @@ public class Location {
             }
 
         public  static void afficher_locations (){
-       
+            if(Location.Locations.isEmpty() == true )
+            System.out.println("aucun location");
+            else{
             for (int i=0;i<nombrelocations;i++){ 
                 if (i==0){
                     System.out.println("La liste des locations:");
@@ -143,7 +145,7 @@ public class Location {
                 System.out.println( "client id :"+Location.Locations.get(i).client.getIdClient()+" | véhicule id : " 
                 + Location.Locations.get(i).vehicule.getIdVehicule()+ " | Date début: " + Location.Locations.get(i).dateDebut
                 +" | Durée: " + Location.Locations.get(i).duree);
-            }
+            }}
     }
 
     public static int Recherche_location (int idc ,int idv) {
@@ -168,10 +170,13 @@ public class Location {
         public  static void afficher_loc (int  i){
        
         {
+            if(Location.Locations.isEmpty() == true )
+            System.out.println("aucun location");
+            else{
                 System.out.println( "client id :"+Location.Locations.get(i).client.getIdClient()+" | véhicule id : " 
                 + Location.Locations.get(i).vehicule.getIdVehicule()+ " | Date début: " + Location.Locations.get(i).dateDebut
                 +" | Durée: " + Location.Locations.get(i).duree);
-            }
+            }}
     }
 
         

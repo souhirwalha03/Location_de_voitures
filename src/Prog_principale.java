@@ -46,7 +46,8 @@ public class Prog_principale {
         Vehicule.vehicules.add(vehicule1);
         //afficher details de la vehicules vehicule1 
         System.out.println("information du vehicule ajoutée ");
-        System.out.println(vehicule1.toString()); 
+        System.out.println(vehicule1.toString());
+
         //disponibilité de la vehicule vehicule1
         Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule1));
 
@@ -70,7 +71,7 @@ public class Prog_principale {
         //ajouter a la liste des agents
         Facture.factures.add(f1);
         //afficher details du f1
-        System.out.println("information de l'agent ajoutée ");
+        System.out.println("information de la facture ajoutée ");
         System.out.println(f1.toString()); 
 
         //meme pour f2 et f3
@@ -81,22 +82,7 @@ public class Prog_principale {
         System.out.println();
         System.out.println();
 
-        Location l1 = new Location(client1,vehicule1,2,"8/3/2023");
-        Location.Locations.add(l1);
-        Location.demande_location(Client.clients.indexOf(client1),Vehicule.vehicules.indexOf(vehicule1),2,"8/3/2023");
-        
-        Location l2 = new Location(client1,vehicule2,2,"9/3/2023");
-        Location.Locations.add(l2);
-        Location.demande_location(Client.clients.indexOf(client1),Vehicule.vehicules.indexOf(vehicule2),2,"9/3/2023");
-        
-        Location l3 = new Location(client3,vehicule1,2,"10/3/2023");
-        Location.Locations.add(l3);
-        Location.demande_location(Client.clients.indexOf(client3),Vehicule.vehicules.indexOf(vehicule1),2,"10/3/2023");
-
-       
-        
-        
-
+   
         int x;
       do{
             Scanner sc =new Scanner(System.in);

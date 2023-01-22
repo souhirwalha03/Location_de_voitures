@@ -6,7 +6,7 @@ public class Location {
     public String dateDebut ;
     public int duree;
     public static ArrayList<Location> Locations = new ArrayList<Location>();
-    public static int  nombrelocations ;
+    public static int  nombrelocations = 0 ;
 
     public Client client;
     public Vehicule vehicule;
@@ -30,8 +30,8 @@ public class Location {
     this.client=client;
     this.vehicule=vehicule;
     this.duree=duree;
-    nombrelocations++;
     this.dateDebut=dateDebut;
+    nombrelocations++;
 
     }
 
@@ -58,22 +58,27 @@ public class Location {
                 int index=Vehicule.Recherche_voiture(choix);
 
                 if (index == -1){
-                    System.out.println("id not found");}
+                    System.out.println("wrong id ");}
                     else 
                     {
                         if ( Vehicule.vehicules.get(index).getDispo() == 1 ) 
                             {   
                                 Location l = new Location() ;
-                                Client.clients.get(i).vehicules.add(Vehicule.vehicules.get(index));
-                                Vehicule.vehicules.get(index).clients.add(Client.clients.get(i)); 
+                                l.client = Client.clients.get(i);
+                                l.vehicule = Vehicule.vehicules.get(index);
                                 System.out.println("entrez la durée de location");
                                 int a = sc.nextInt();
                                 l.duree=a;
+
                                 System.out.println("entrez la date de location (jj/mm/aaaa)");
                                 String b = sc.next();
                                 l.dateDebut=b;
-                                nombrelocations++;
+
                                 Location.Locations.add(l);
+                                /** 
+                                Client.clients.get(i).vehicules.add(Vehicule.vehicules.get(index));
+                                Vehicule.vehicules.get(index).clients.add(Client.clients.get(i)); 
+                                **/
                                 
                             }
                         else if (Vehicule.vehicules.get(index).getDispo() == 0 )

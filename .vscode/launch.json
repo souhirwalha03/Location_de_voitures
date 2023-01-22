@@ -9,6 +9,13 @@
             "name": "Launch Prog_principale",
             "request": "launch",
             "mainClass": "Prog_principale",
+            "projectName": "Location_de_voitures_622cf853"
+        },
+        {
+            "type": "java",
+            "name": "Launch Prog_principale",
+            "request": "launch",
+            "mainClass": "Prog_principale",
             "projectName": "Location_de_voitures_c5e4db63"
         },
         {

@@ -75,10 +75,10 @@ public class Location {
                                 l.dateDebut=b;
 
                                 Location.Locations.add(l);
-                                /** 
-                                Client.clients.get(i).vehicules.add(Vehicule.vehicules.get(index));
+                                
                                 Vehicule.vehicules.get(index).clients.add(Client.clients.get(i)); 
-                                **/
+                                Client.clients.get(i).vehicules.add(Vehicule.vehicules.get(index));
+                            
                                 
                             }
                         else if (Vehicule.vehicules.get(index).getDispo() == 0 )

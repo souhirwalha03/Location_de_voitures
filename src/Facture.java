@@ -63,12 +63,12 @@ public class Facture {
               System.out.println("Entrer l'id de l'agent responsable");
               int p=sc.nextInt();
               int rech=Agent.Recherche_Ag(p);
-              do{
-               System.out.println("il n'existe pas un agent qui a un id "+p);
+              while (rech==-1){
                System.out.println("Entrer l'id de l'agent responsable");
                 p=sc.nextInt();
                 rech=Agent.Recherche_Ag(p);
-               }while (rech==-1);
+                System.out.println("il n'existe pas un agent qui a un id "+p);
+               }
                f.setagent(Agent.Agents.get(rech));
                Facture.factures.add(f);
 
@@ -82,7 +82,7 @@ public class Facture {
 
        for (int j=0; j<Location.nombrelocations;j++){ 
           for (int i=0; i<nombreFactures;i++){ 
-               
+
            float x = Facture.Calcul_montant(Location.Locations.get(j));
                       
            System.out.println( "id facture:"+Facture.factures.get(i).idfac+" | Date de facture : " 

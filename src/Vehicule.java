@@ -112,13 +112,14 @@ public class Vehicule {
             System.out.println("Entrer l'id de l'agent responsable");
             int p=sc.nextInt();
             int rech=Agent.Recherche_Ag(p);
-            do{
-                System.out.println("il n'existe pas un agent qui a un id "+p);
+            while (rech==-1){
                 System.out.println("Entrer l'id de l'agent responsable");
                  p=sc.nextInt();
                  rech=Agent.Recherche_Ag(p);
                 v.setagent(Agent.Agents.get(rech));
-                }while (rech==-1);
+                System.out.println("il n'existe pas un agent qui a un id "+p);
+
+                }
             Vehicule.vehicules.add(v);
         }
     }

@@ -50,11 +50,17 @@ public class Prog_principale {
         //disponibilité de la vehicule vehicule1
         Vehicule.EstDisponible(Vehicule.vehicules.indexOf(vehicule1));
 
+        ///System.out.println("Entrer l'id du client");
+        vehicule1.clients.add(client1);
+        vehicule1.clients.add(client3);
+
         //meme pour vehicule2 et vehicule3
         Vehicule vehicule2 = new Vehicule(85899, 1100, "Fiat" , 1, Ag1,70000);
         Vehicule vehicule3 = new Vehicule(85000, 1500, "Mercedes" , 1, Ag2,60000);
         Vehicule.vehicules.add(vehicule2);
         Vehicule.vehicules.add(vehicule3);
+         
+        vehicule2.clients.add(client1);
 
         
 
@@ -105,7 +111,7 @@ public class Prog_principale {
             break;
 
             case 2:
-               Client.affClients(Client.clients);
+               Client.affClients();
             break;
 
             case 3: 
@@ -113,7 +119,7 @@ public class Prog_principale {
             break;
 
             case 4: 
-               Agent.affAgents(Agent.Agents);
+               Agent.affAgents();
             break;
 
             case 5: 
@@ -143,10 +149,16 @@ public class Prog_principale {
                Client.aff_vehicules(Client.clients.get(in));
             break;
             case 9:
+            try{
                System.out.println("Entrez l'id de la vehicule");
                int p=sc.nextInt();
                int n= Vehicule.Recherche_voiture(p);
+               System.out.println(n);
                Vehicule.aff_clients(Vehicule.vehicules.get(n));
+            }catch(Exception e)
+            {
+               System.out.println("aucune res trouvée");
+            }
 
                
             break;
@@ -175,7 +187,7 @@ public class Prog_principale {
             Facture.afficher_facture();
             break;
             case 15:
-
+            
             break;
 
          } 

@@ -36,7 +36,7 @@ public class Agent extends Utilisateur {
     }
 
 //set
-    public void setidAgent (int id_cient){
+    public void setidAgent (int id_agent){
         this.id_agent = id_agent;
     }
     public void setFacture (ArrayList <Facture> factures){
@@ -71,12 +71,12 @@ public static void  ajouter_agent(){
 
 
  //methode afficher liste des agents
-    public static void affAgents (ArrayList<Agent> Agents){
+    public static void affAgents (){
         for (int i=0;i<nombreAgents;i++){
             { if (i==0){
                 System.out.println("La liste des Agents:");
                 }
-             System.out.println( "id:"+Agents.get(i).id_agent+" | Nom: " + Agents.get(i).getNom()+ " | Prénom: "+ Agents.get(i).getPrenom());
+             System.out.println( "id:"+Agent.Agents.get(i).id_agent+" | Nom: " + Agent.Agents.get(i).getNom()+ " | Prénom: "+ Agent.Agents.get(i).getPrenom());
             }
         }
     }

@@ -69,13 +69,13 @@ public static void  ajouter_client(){
 }
 
 //method afficher la liste des clients
-public static void affClients (ArrayList<Client> clients){
+public static void affClients (){
     for (int i=0;i<nombreClients;i++){
         { 
             if (i==0){
                 System.out.println("La liste des Clients:");
             }
-            System.out.println( "id:"+clients.get(i).id_client+" | Nom: " + clients.get(i).getNom()+ " | Prénom: " + clients.get(i).getPrenom());
+            System.out.println( "id:"+Client.clients.get(i).id_client+" | Nom: " + Client.clients.get(i).getNom()+ " | Prénom: " + Client.clients.get(i).getPrenom());
         }
     }
 }
@@ -116,7 +116,6 @@ public static void aff_vehicules(Client c ){
                 }
         }
     }
-
 
 }
     
